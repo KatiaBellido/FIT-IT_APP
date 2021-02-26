@@ -2,11 +2,11 @@
 App: FIT-IT Project 
 
 ##### Desarrolladores:
-1. Katia Yareth Bellido López - A01023638 
-2. Abraham García del Corral - A01023256
-3. Marcela Fuentes Lecuona - A01748161
-4. Miguel Ángel Hernández Maldonado - A01022398
-5. Constanza Gómez Sáncez - A01026717
+1. _Katia Yareth Bellido López - A01023638_
+2. _Abraham García del Corral - A01023256_
+3. _Marcela Fuentes Lecuona - A01748161_
+4. _Miguel Ángel Hernández Maldonado - A01022398_
+5. _Constanza Gómez Sáncez - A01026717_
 
 ---
 ## 1. DESCRIPCIÓN Y OBJETIVOS
