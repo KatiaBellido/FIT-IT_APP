@@ -22,7 +22,7 @@ Guiar y facilitar el acceso a diferentes herramientas para cuidar la salud tanto
 Crear una comunidad que siga un estilo de vida más sano sin necesidad de sufrir.
 
 ## 2. GAMA DE COLOR DE LA APP
-
+![image alt text](PALETA-FIT-IT.png)
 ## 3. FUNCIONALIDADES
 
 ### 3.1 FUNCION 1
