@@ -4,7 +4,7 @@ App: FIT-IT Project
 ##### Desarrolladores:
 1. Katia Yareth Bellido López - A01023638 
 2. Abraham García del Corral - A01023256
-3. Marcela Fuentes de Lecuona - A01748161
+3. Marcela Fuentes Lecuona - A01748161
 4. Miguel Ángel Hernández Maldonado - A01022398
 5. Constanza Gómez Sáncez - A01026717
 
