@@ -53,7 +53,7 @@ Contadores para ejercicio y meditación.
   Se tendrá la opción de meditación libre (respirar por cierto tiempo sin una guía de voz), donde el usuario podrá seleccionar el tiempo durante el cual desea meditar y se activará el contador en cuenta regresiva.
   
 ## 4. LOGO
-
+![](LogoFIT_IT.png)
 ## 5. LIBRERIAS A UTILIZAR
 
 https://github.com/ReactNativeSchool/react-native-timer
