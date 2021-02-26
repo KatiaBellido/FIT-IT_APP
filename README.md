@@ -18,8 +18,8 @@ Fit-It será tu mejor compañero donde quiera que estés y sin importar tu nivel
 Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva registro de tus rutinas, y forma parte de una gran comunidad de personas buscando ser su mejor yo.
 
 ### 1.2 Objetivos
-Guiar y facilitar el acceso a diferentes herramientas para cuidar la salud tanto física como mental.
-Crear una comunidad que siga un estilo de vida más sano sin necesidad de sufrir.
+* Guiar y facilitar el acceso a diferentes herramientas para cuidar la salud tanto física como mental.
+* Crear una comunidad que siga un estilo de vida más sano sin necesidad de sufrir.
 
 ## 2. GAMA DE COLOR DE LA APP
 ![image alt text](PALETA-FIT-IT.png)
