@@ -57,27 +57,27 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 ## 5. ELEMENTOS A UTILIZAR
 
 * Avatar.
-![](/ELEMENTS/avatar.jpg)
+![image alt text](/ELEMENTS/avatar.jpg)
 * CheckBox.
-![](/ELEMENTS/checkbox.png)
+![image alt text](/ELEMENTS/checkbox.png)
 * Icon.
-![](/ELEMENTS/icons.png)
+![image alt text](/ELEMENTS/icons.png)
 * Input.
-![](/ELEMENTS/input.png)
+![image alt text](/ELEMENTS/input.png)
 * ListItem.
-![](/ELEMENTS/lists.png)
+![image alt text](/ELEMENTS/lists.png)
 * SearchBar.
-![](/ELEMENTS/searchbar.png)
+![image alt text](/ELEMENTS/searchbar.png)
 * Text.
-![](/ELEMENTS/text.png)
+![image alt text](/ELEMENTS/text.png)
 * Button.
-![](/ELEMENTS/button.jpg)
+![image alt text](/ELEMENTS/button.jpg)
 * Badge.
-![](/ELEMENTS/badge.jpg)
+![image alt text](/ELEMENTS/badge.jpg)
 * Header.
-![](/ELEMENTS/header.png)
+![image alt text](/ELEMENTS/header.png)
 * Image.
-![](/ELEMENTS/image.gif)
+![image alt text](/ELEMENTS/image.gif)
 
 ## 6. LIBRERIAS A UTILIZAR
 
