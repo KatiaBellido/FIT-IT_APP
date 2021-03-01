@@ -100,6 +100,8 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 
 ![image alt text](/ELEMENTS/image.gif)
 
+* Imagenes de React Native Elements
+
 ## 6. LIBRERIAS A UTILIZAR
 
 * [React Native School](https://github.com/ReactNativeSchool/react-native-timer)
