@@ -53,7 +53,24 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
   
 ## 4. LOGO
 ![](LogoFIT_IT.png)
-## 5. LIBRERIAS A UTILIZAR
+
+## 5. ELEMENTOS A UTILIZAR
+*Avatar
+*CheckBox
+*Icon
+*Input
+*ListItem
+*SearchBar
+*Text
+*Button
+*Badge
+*Header
+*Image
+
+
+
+
+## 6. LIBRERIAS A UTILIZAR
 
 * [React Native School](https://github.com/ReactNativeSchool/react-native-timer)
 * [F8App](https://github.com/fbsamples/f8app)
