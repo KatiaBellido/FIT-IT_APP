@@ -59,7 +59,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Avatar.
 ![image alt text](/ELEMENTS/avatar.jpg)
 * CheckBox.
-![image alt text](/ELEMENTS/checkbox.png)
+###![image alt text](/ELEMENTS/checkbox.png)
 * Icon.
 ![image alt text](/ELEMENTS/icons.png)
 * Input.
