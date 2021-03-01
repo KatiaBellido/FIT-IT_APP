@@ -57,6 +57,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 ## 5. ELEMENTOS A UTILIZAR
 
 * Avatar.
+![](/ELEMENTS/avatar.jpg)
 * CheckBox.
 * Icon.
 * Input.
