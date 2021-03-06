@@ -57,7 +57,12 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
   <img src="/PHOTOS/LogoFIT_IT.png" alt="image alt text" width="400" height = "400">.
 </p>
 
-## 5. ELEMENTOS A UTILIZAR
+
+## 5. ROADMAP
+
+Aquí dejamos el link a nuestro [RoadMap.md](/RoadMap.md)
+
+## 6. ELEMENTOS A UTILIZAR
 
 * Avatar.
 
