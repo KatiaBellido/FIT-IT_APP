@@ -22,7 +22,8 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Crear una comunidad que siga un estilo de vida más sano sin necesidad de sufrir.
 
 ## 2. GAMA DE COLOR DE LA APP
-![image alt text](/PHOTOS/PALETA-FIT-IT.png)
+<img src="/PHOTOS/PALETA-FIT-IT.png" alt="image alt text" width="800" height = "480" >.
+
 ## 3. FUNCIONALIDADES
 
 ### 3.1 FUNCION 1
@@ -52,7 +53,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Se tendrá la opción de meditación libre (respirar por cierto tiempo sin una guía de voz), donde el usuario podrá seleccionar el tiempo durante el cual desea meditar y se activará el contador en cuenta regresiva.
   
 ## 4. LOGO
-![alt text](/PHOTOS/LogoFIT_IT.png)
+<img src="/PHOTOS/LogoFIT_IT.png" alt="image alt text" width="400" height = "400">.
 
 ## 5. ELEMENTOS A UTILIZAR
 
