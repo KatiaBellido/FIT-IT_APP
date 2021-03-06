@@ -4,9 +4,13 @@ Este archivo da un visión general de la dirección que va a tomar el proyecto.
 
 ## Roles
 **Rol:** Katia Yareth Bellido López
+
 **Rol:** Abraham García del Corral
+
 **Rol:** Marcela Fuentes Lecuona
+
 **Rol:** Miguel Ángel Hernández Maldonado
+
 **Rol:** Constanza Gómez Sánchez
 
 ## Etapas
