@@ -92,7 +92,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * SearchBar.
 
 <p align="center">
-  <img src="/PHOTOS/ELEMENTS/searchbar.png" alt="image alt text" width="250" height = "250">.
+  <img src="/PHOTOS/ELEMENTS/searchbar.png" alt="image alt text" width="200" height = "300">.
 </p>
 
 * Text.
@@ -103,13 +103,13 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Button.
 
 <p align="center">
-  <img src="/PHOTOS/ELEMENTS/button.png" alt="image alt text">.
+  <img src="/PHOTOS/ELEMENTS/button.jpg" alt="image alt text" width="200" height = "300">.
 </p>
 
 * Badge.
 
 <p align="center">
-  <img src="/PHOTOS/ELEMENTS/badge.png" alt="image alt text">.
+  <img src="/PHOTOS/ELEMENTS/badge.jpg" alt="image alt text" width="200" height = "300">.
 </p>
 
 * Header.
