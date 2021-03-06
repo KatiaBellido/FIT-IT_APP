@@ -22,7 +22,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Crear una comunidad que siga un estilo de vida más sano sin necesidad de sufrir.
 
 ## 2. GAMA DE COLOR DE LA APP
-![image alt text](PALETA-FIT-IT.png)
+![image alt text](/PHOTOS/PALETA-FIT-IT.png)
 ## 3. FUNCIONALIDADES
 
 ### 3.1 FUNCION 1
@@ -52,53 +52,53 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Se tendrá la opción de meditación libre (respirar por cierto tiempo sin una guía de voz), donde el usuario podrá seleccionar el tiempo durante el cual desea meditar y se activará el contador en cuenta regresiva.
   
 ## 4. LOGO
-![](LogoFIT_IT.png)
+![](/PHOTOS/LogoFIT_IT.png)
 
 ## 5. ELEMENTOS A UTILIZAR
 
 * Avatar.
 
-![image alt text](/ELEMENTS/avatar.jpg)
+![image alt text](/PHOTOS/ELEMENTS/avatar.jpg)
 
 * CheckBox.
 
-![image alt text](/ELEMENTS/checkbox.png)
+![image alt text](/PHOTOS/ELEMENTS/checkbox.png)
 
 * Icon.
 
-![image alt text](/ELEMENTS/icons.png)
+![image alt text](/PHOTOS/ELEMENTS/icons.png)
 
 * Input.
 
-![image alt text](/ELEMENTS/input.png)
+![image alt text](/PHOTOS/ELEMENTS/input.png)
 
 * ListItem.
 
-![image alt text](/ELEMENTS/lists.png)
+![image alt text](/PHOTOS/ELEMENTS/lists.png)
 
 * SearchBar.
 
-![image alt text](/ELEMENTS/searchbar.png)
+![image alt text](/PHOTOS/ELEMENTS/searchbar.png)
 
 * Text.
 
-![image alt text](/ELEMENTS/text.png)
+![image alt text](/PHOTOS/ELEMENTS/text.png)
 
 * Button.
 
-![image alt text](/ELEMENTS/button.jpg)
+![image alt text](/PHOTOS/ELEMENTS/button.jpg)
 
 * Badge.
 
-![image alt text](/ELEMENTS/badge.jpg)
+![image alt text](/PHOTOS/ELEMENTS/badge.jpg)
 
 * Header.
 
-![image alt text](/ELEMENTS/header.png)
+![image alt text](/PHOTOS/ELEMENTS/header.png)
 
 * Image.
 
-![image alt text](/ELEMENTS/image.gif)
+![image alt text](/PHOTOS/ELEMENTS/image.gif)
 
 * Imagenes de React Native Elements
 
