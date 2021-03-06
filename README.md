@@ -6,7 +6,7 @@ App: FIT-IT Project
 2. _Abraham García del Corral - A01023256_
 3. _Marcela Fuentes Lecuona - A01748161_
 4. _Miguel Ángel Hernández Maldonado - A01022398_
-5. _Constanza Gómez Sáncez - A01026717_
+5. _Constanza Gómez Sánchez - A01026717_
 
 ---
 ## 1. DESCRIPCIÓN Y OBJETIVOS
@@ -71,7 +71,6 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
   <img src="/PHOTOS/ELEMENTS/checkbox.png" alt="image alt text" width="200" height = "300">.
 </p>
 
-
 * Icon.
 
 <p align="center">
@@ -80,35 +79,50 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 
 * Input.
 
-![image alt text](/PHOTOS/ELEMENTS/input.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/input.png" alt="image alt text" width="250" height = "200">.
+</p>
 
 * ListItem.
 
-![image alt text](/PHOTOS/ELEMENTS/lists.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/lists.png" alt="image alt text" width="250" height = "200">.
+</p>
 
 * SearchBar.
 
-![image alt text](/PHOTOS/ELEMENTS/searchbar.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/searchbar.png" alt="image alt text" width="250" height = "250">.
+</p>
 
 * Text.
-
-![image alt text](/PHOTOS/ELEMENTS/text.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/text.png" alt="image alt text" width="250" height = "200">.
+</p>
 
 * Button.
 
-![image alt text](/PHOTOS/ELEMENTS/button.jpg)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/button.png" alt="image alt text">.
+</p>
 
 * Badge.
 
-![image alt text](/PHOTOS/ELEMENTS/badge.jpg)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/badge.png" alt="image alt text">.
+</p>
 
 * Header.
 
-![image alt text](/PHOTOS/ELEMENTS/header.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/header.png" alt="image alt text">.
+</p>
 
 * Image.
 
-![image alt text](/PHOTOS/ELEMENTS/image.gif)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/image.gif" alt="image alt text" width="300" height = "200">.
+</p>
 
 * Imagenes de React Native Elements
 
