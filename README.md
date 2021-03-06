@@ -53,21 +53,30 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Se tendrá la opción de meditación libre (respirar por cierto tiempo sin una guía de voz), donde el usuario podrá seleccionar el tiempo durante el cual desea meditar y se activará el contador en cuenta regresiva.
   
 ## 4. LOGO
-<img src="/PHOTOS/LogoFIT_IT.png" alt="image alt text" width="400" height = "400">.
+<p align="center">
+  <img src="/PHOTOS/LogoFIT_IT.png" alt="image alt text" width="400" height = "400">.
+</p>
 
 ## 5. ELEMENTOS A UTILIZAR
 
 * Avatar.
 
-![image alt text](/PHOTOS/ELEMENTS/avatar.jpg)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/avatar.jpg" alt="image alt text" width="350" height = "300">.
+</p>
 
 * CheckBox.
 
-![image alt text](/PHOTOS/ELEMENTS/checkbox.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/checkbox.png" alt="image alt text" width="200" height = "300">.
+</p>
+
 
 * Icon.
 
-![image alt text](/PHOTOS/ELEMENTS/icons.png)
+<p align="center">
+  <img src="/PHOTOS/ELEMENTS/icons.png" alt="image alt text" width="250" height = "200">.
+</p>
 
 * Input.
 
