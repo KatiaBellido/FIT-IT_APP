@@ -26,7 +26,7 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 
 ## 3. FUNCIONALIDADES
 
-### 3.1 FUNCION 1
+### 3.1 FUNCION 1: CATEGORÍAS
 * Desplegar rutinas de ejercicio, meditaciones, y recetas pre-cargadas en menús diferentes
 * Se tendrá un menú para cada categoría, el cual podrá ser accesado entrando al menú en la barra de navegación y dando click al botón correspondiente.
 * En cada categoría se desplegarán las opciones disponibles en una lista con imágenes o texto llamativo.
@@ -35,18 +35,18 @@ Presume tus logros ante tus amigos mediante la función social de Fit-It, lleva 
 * Para la meditación se incluirán audios para guiar la respiración del usuario.
 * En las recetas se incluirán fotos y/o videos ilustrativos.
 
-### 3.2 FUNCION 2
+### 3.2 FUNCION 2: CONTROL
 * Herramientas para llevar el control de las rutinas/meditaciones/recetas realizadas.
 * En el perfil del usuario podrá encontrar 3 anillos (calorías quemadas, minutos de ejercicio, y minutos de meditación) para llevar el control de sus actividades diarias. Asimismo encontrará gráficas donde podrá ver su desempeño de estas mismas categorías de manera semanal y mensual.
 * Al terminar cada sesión ya sea de meditación o ejercicio, se sumará la información de tiempo o calorías (para los ejercicios físicos) a los anillos del día.
   
-### 3.3 FUNCION 3
+### 3.3 FUNCION 3: SOCIAL
 * Función social donde el usuario pueda agregar amigos y ver sus avances en un feed.
 * Creación de un perfil (Nombre, biografía, foto de perfil) donde se desplegarán los logros del usuario.
 * Posibilidad de agregar como amigo (vía solicitud de amistad) o eliminar a otro usuario.
 * Chat con amigos.
   
-### 3.4 FUNCION 4
+### 3.4 FUNCION 4: CONTADORES
 * Contadores para ejercicio y meditación.
 * Al iniciar una sesión de ejercicio, se podrá activar el contador de tiempo o de repeticiones según sea el caso correspondiente.
 * Al guardar una rutina de ejercicio, se le permitirá almacenar cuánto peso cargó o el número de repeticiones realizadas según sea el caso correspondiente.
@@ -131,8 +131,11 @@ Aquí dejamos el link a nuestro [RoadMap.md](/RoadMap.md)
 
 * Imagenes de React Native Elements
 
-## 6. LIBRERIAS A UTILIZAR
+## 7. LIBRERIAS A UTILIZAR
 
 * [React Native School](https://github.com/ReactNativeSchool/react-native-timer)
 * [F8App](https://github.com/fbsamples/f8app)
 * [React Native Airbnn](https://github.com/imandyie/react-native-airbnb-clone)
+
+## 8. ROLES
+* Marcela Fuentes: Arquitecta y desarrolladora del menú/espacio de meditación
