@@ -3,11 +3,11 @@
 Este archivo da un visión general de la dirección que va a tomar el proyecto. 
 
 ## Roles
-* **Rol:** Katia Yareth Bellido López
-* **Rol:** Abraham García del Corral
-* **Rol:** Marcela Fuentes Lecuona
-* **Rol:** Miguel Ángel Hernández Maldonado
-* **Rol:** Constanza Gómez Sánchez
+* **Rol:** Katia Yareth Bellido López: Arquitecta y desarrolladora
+* **Rol:** Abraham García del Corral: Arquitecto y desarrollador del 
+* **Rol:** Marcela Fuentes Lecuona: Arquitecta y desarrolladora del menú/espacio de meditación
+* **Rol:** Miguel Ángel Hernández: Maldonado Arquitecto y desarrollador del 
+* **Rol:** Constanza Gómez Sánchez: Arquitecta y desarrolladora del 
 
 ## Etapas
 
