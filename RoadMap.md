@@ -3,11 +3,11 @@
 Este archivo da un visión general de la dirección que va a tomar el proyecto. 
 
 ## Roles
-* **Rol** Katia Yareth Bellido López: Arquitecta y desarrolladora de las herramientas de control y contadores
-* **Rol** Abraham García del Corral: Arquitecto y desarrollador del menú/espacio de rutinas
-* **Rol** Marcela Fuentes Lecuona: Arquitecta y desarrolladora del menú/espacio de meditación
-* **Rol** Miguel Ángel Hernández: Maldonado Arquitecto y desarrollador del menú/espacio social
-* **Rol** Constanza Gómez Sánchez: Arquitecta y desarrolladora del menú/espacio de recetas
+* **Rol Katia Yareth Bellido López:** Arquitecta y desarrolladora de las herramientas de control y contadores
+* **Rol Abraham García del Corral:** Arquitecto y desarrollador del menú/espacio de rutinas
+* **Rol Marcela Fuentes Lecuona:** Arquitecta y desarrolladora del menú/espacio de meditación
+* **Rol Miguel Ángel Hernández Maldonado:** Arquitecto y desarrollador del menú/espacio social
+* **Rol Constanza Gómez Sánchez:** Arquitecta y desarrolladora del menú/espacio de recetas
 
 ## Etapas
 
