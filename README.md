@@ -137,5 +137,3 @@ Aquí dejamos el link a nuestro [RoadMap.md](/RoadMap.md)
 * [F8App](https://github.com/fbsamples/f8app)
 * [React Native Airbnn](https://github.com/imandyie/react-native-airbnb-clone)
 
-## 8. ROLES
-* Marcela Fuentes: Arquitecta y desarrolladora del menú/espacio de meditación
