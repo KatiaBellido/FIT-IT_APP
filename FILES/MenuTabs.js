@@ -10,7 +10,7 @@ export default class TabsExample extends Component {
   render() {
     return (
       <Container>
-        <Header hasTabs/>
+        
         <Header>
           <Body>
             <HeaderMenu />
