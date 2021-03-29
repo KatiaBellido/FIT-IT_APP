@@ -1,39 +1,40 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch, Image  } from 'react-native';
-
+import { Ionicons } from '@expo/vector-icons'; 
 export const HeaderMenu = () =>{
 
     return (    
         <View style={styles.container}>
-          <Image source={{uri: 'https://reactjs.org/logo-og.png'}}style={styles.image} />
+          <Image source={require('./assets/LogoFIT_IT.png')} style={styles.image} />
           <Text style={styles.text}>RECETAS</Text>
           <Text style={styles.text}>Lunes 15 Feb</Text> 
-          <Image source={{uri: 'https://reactjs.org/logo-og.png'}}style={styles.image} />
+          <Ionicons name="ios-calendar-outline" size={45} color="#023047" />
         </View>
       );
 }
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    alignItems:"center",
     backgroundColor: '#8ECAE6',
-    paddingTop:0,
-  
+    minHeight: 70,
   },
   image:{
+    marginLeft: 6,
     flex:1,
-    width:20,
-    height:20,
-    paddingTop:70,
+    width:10,
+    height:10,
+    paddingBottom:70
   },
   switch:{
     backgroundColor:"black",
     flex:1,
   },
   text:{
+    fontSize:16,
     color: "white",
-    padding:10,
-    flex:1,
-    textAlign:"center",
+    flex:1.7,
+    textAlign:"center"
   },
   fecha:{
 
