@@ -5,7 +5,7 @@ export const HeaderMenu = () =>{
 
     return (    
         <View style={styles.container}>
-          <Image source={require('./assets/LogoFIT_IT.png')} style={styles.image} />
+          <Image source={require('../assets/LogoFIT_IT.png')} style={styles.image} />
           <Text style={styles.text}>RECETAS</Text>
           <Text style={styles.text}>Lunes 15 Feb</Text> 
           <Ionicons name="ios-calendar-outline" size={45} color="#023047" />

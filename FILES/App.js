@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MenuTabs from './MenuTabs';
+import MenuTabs from './screens/MenuTabs';
 console.disableYellowBox = true;
 
 export default class App extends Component {
@@ -8,8 +8,6 @@ export default class App extends Component {
     return(
     
    <MenuTabs/>
-    
-
   );
 
 }
