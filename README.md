@@ -66,68 +66,23 @@ Aquí dejamos el link a nuestro [RoadMap.md](/RoadMap.md)
 
 * Avatar.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/avatar.jpg" alt="image alt text" width="350" height = "300">.
-</p>
-
 * CheckBox.
-
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/checkbox.png" alt="image alt text" width="200" height = "300">.
-</p>
 
 * Icon.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/icons.png" alt="image alt text" width="250" height = "200">.
-</p>
-
 * Input.
-
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/input.png" alt="image alt text" width="250" height = "200">.
-</p>
 
 * ListItem.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/lists.png" alt="image alt text" width="250" height = "200">.
-</p>
-
 * SearchBar.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/searchbar.png" alt="image alt text" width="200" height = "300">.
-</p>
-
 * Text.
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/text.png" alt="image alt text" width="250" height = "200">.
-</p>
 
 * Button.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/button.jpg" alt="image alt text" width="200" height = "300">.
-</p>
-
 * Badge.
 
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/badge.jpg" alt="image alt text" width="200" height = "300">.
-</p>
-
-* Header.
-
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/header.png" alt="image alt text">.
-</p>
-
 * Image.
-
-<p align="center">
-  <img src="/PHOTOS/ELEMENTS/image.gif" alt="image alt text" width="300" height = "200">.
-</p>
 
 * Imagenes de React Native Elements
 
