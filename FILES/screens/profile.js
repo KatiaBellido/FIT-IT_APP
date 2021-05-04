@@ -63,7 +63,6 @@ export default class profile extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 50,
         backgroundColor: "rgba(105,109,125, 0.1)",
     },
     containerSafe: {

@@ -10,13 +10,7 @@ export default class TabsExample extends Component {
   render() {
     return (
       <Container>
-        
-        <Header>
-          <Body>
-            <HeaderMenu />
-          </Body>
-        </Header>
-
+          <HeaderMenu />
         <Tabs>
           <Tab heading="Platillos">
             <Tab1 />

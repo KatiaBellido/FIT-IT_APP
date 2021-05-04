@@ -3,17 +3,23 @@ import { StyleSheet, Text, View, Switch, Image  } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 export const HeaderMenu = () =>{
 
-    return (    
+    return (  
+      <View style={styles.containerSafe}>
         <View style={styles.container}>
           <Image source={require('../assets/LogoFIT_IT.png')} style={styles.image} />
           <Text style={styles.text}>RECETAS</Text>
           <Text style={styles.text}>Lunes 15 Feb</Text> 
           <Ionicons name="ios-calendar-outline" size={45} color="#023047" />
         </View>
+      </View>  
       );
 }
 const styles = StyleSheet.create({
+  containerSafe: {
+    backgroundColor: '#8ECAE6',
+  },
   container: {
+    marginTop: 50,
     flexDirection: "row",
     alignItems:"center",
     backgroundColor: '#8ECAE6',
