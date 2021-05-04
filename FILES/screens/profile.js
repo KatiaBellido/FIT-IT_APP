@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
-
+import { HeaderMenu } from "./HeaderMenu";
 export default class profile extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <HeaderMenu/>
                 <SafeAreaView style={styles.containerSafe}>
                     
                     <View style={styles.datosX}>
                         <View style={styles.datosBox}>
-                            <Image source={require('../assets/LogoFIT_IT.png')}
+                            <Image source={require('../assets/favicon.png')}
                             style={styles.image}
                             />
                             <View style={styles.datosX}>
@@ -62,18 +63,18 @@ export default class profile extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        marginTop: 50,
         backgroundColor: "rgba(105,109,125, 0.1)",
     },
     containerSafe: {
       flex: 1,
-      margin: 16,
+      marginHorizontal: 16,
       paddingTop: 20,
     },
     datosBox: {
         flexDirection: 'row',
         justifyContent: "space-around",
         alignItems: "center",
-        paddingTop:20,
         marginVertical: 20,
     },
     datosX: {

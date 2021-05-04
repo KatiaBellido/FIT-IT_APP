@@ -17,14 +17,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems:"center",
     backgroundColor: '#8ECAE6',
-    minHeight: 70,
+    padding:10
   },
   image:{
-    marginLeft: 6,
-    flex:1,
-    width:10,
-    height:10,
-    paddingBottom:70
+      width: 60, 
+      height:60,
   },
   switch:{
     backgroundColor:"black",
