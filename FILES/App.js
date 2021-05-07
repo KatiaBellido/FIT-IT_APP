@@ -7,7 +7,7 @@ import Profile from './screens/profile';
 import FullView from './screens/fullView';
 import Rutinas from './screens/RutinasMain';
 import Meditation from './screens/MeditMenu';
-import Meditaudios from './screens/MeditPlayer';
+// import Meditaudios from './screens/MeditPlayer';
 
 console.disableYellowBox = true;
 
@@ -20,8 +20,8 @@ export default class App extends Component {
     //<Login/>
     //<Signup/>
     //<MenuTabs/>
-    //<Meditation/>
-    <Meditaudios/>
+    <Meditation/>
+    //<Meditaudios/>
   );
 
 }
