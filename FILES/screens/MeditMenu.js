@@ -13,13 +13,9 @@ export default class Meditation extends Component {
 
                 <View style={styles.textBox}>
                     <Text style={styles.title}>
-                        Meditación
-                    </Text>
-                    <Text style={styles.subtitle}>
-                        Meditaciones guiadas para cualquier ocasión
+                        Meditaciones guiadas para cualquier momento y ocasión
                     </Text>
                 </View>
-                <View style={styles.imageColumn}>
                     <Image source={require('../assets/med1.jpg')} style={styles.image}></Image>
                     <Text style={styles.descTtitle}>
                         Aceptación
@@ -27,8 +23,6 @@ export default class Meditation extends Component {
                     <Text style={styles.descText}>
                         Aprende a soltar, dejar fluir, y aceptar.
                     </Text>
-                </View>
-                <View style={styles.imageColumn}>
                     <Image source={require('../assets/med2.jpg')} style={styles.image}></Image>
                     <Text style={styles.descTtitle}>
                         Apreciación
@@ -36,8 +30,6 @@ export default class Meditation extends Component {
                     <Text style={styles.descText}>
                         Descubre un sentido renovado de la gratitud por la vida.
                     </Text>
-                </View>
-                <View style={styles.imageColumn}>
                     <Image source={require('../assets/med3.jpg')} style={styles.image}></Image>
                     <Text style={styles.descTtitle}>
                         Balance
@@ -45,8 +37,6 @@ export default class Meditation extends Component {
                     <Text style={styles.descText}>
                         Reconoce la calma y conviértete en alguien menos explosivo.
                     </Text>
-                </View>
-                <View style={styles.imageColumn}>
                     <Image source={require('../assets/med4.jpg')} style={styles.image}></Image>
                     <Text style={styles.descTtitle}>
                         Concentración
@@ -54,14 +44,6 @@ export default class Meditation extends Component {
                     <Text style={styles.descText}>
                         Familiarízate con un enfoque calmado y preciso.
                     </Text>
-                </View>
-                <View style={{marginVertical:30}}>
-                    <Button
-                        title="Go back"
-                        color="#219EBC"
-                        onPress={() => Alert.alert('Regresa si quieres')}
-                        />
-                </View>
                 </ScrollView>
                 </SafeAreaView>
             </View>
@@ -72,19 +54,9 @@ export default class Meditation extends Component {
 const styles = StyleSheet.create({
     title: {
         padding: 10,
-        fontSize: 16,
+        fontSize: 20,
         color: "#023047",
         fontWeight: "bold",
-        textShadowRadius: 10,
-        textShadowColor: "#8ECAE6",
-        textAlign: "center",
-    },
-
-    subtitle: {
-        padding: 10,
-        fontSize: 14,
-        color: "#023047",
-        fontWeight: "normal",
         textShadowRadius: 10,
         textShadowColor: "#8ECAE6",
         textAlign: "center",
@@ -92,22 +64,22 @@ const styles = StyleSheet.create({
 
     descTtitle: {
         padding: 10,
-        fontSize: 10,
+        fontSize: 18,
         color: "#023047",
         fontWeight: "bold",
         textShadowRadius: 10,
         textShadowColor: "#8ECAE6",
-        textAlign: "left",
+        textAlign: "center",
     },
 
     descText: {
         padding: 10,
-        fontSize: 8,
+        fontSize: 15,
         color: "#023047",
         fontWeight: "normal",
         textShadowRadius: 10,
         textShadowColor: "#8ECAE6",
-        textAlign: "left",
+        textAlign: "center",
     },
 
     container: {
@@ -136,7 +108,7 @@ const styles = StyleSheet.create({
     image:{
         margin: 16,
         padding: 20,
-        width: 110, 
-        height:80,
+        width: 350, 
+        height: 230,
     }
 });
