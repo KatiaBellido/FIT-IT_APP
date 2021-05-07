@@ -1,39 +1,28 @@
 import React from 'react';
 import {Component } from 'react';
 import { StyleSheet, Text, View, ScrollView,Button, Alert, ActivityIndicator } from 'react-native';
-import ActivityRings from "react-native-activity-rings"; 
+import { BarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
+import * as scale from 'd3-scale';
+
 import { HeaderMenu } from "./HeaderMenu";
- 
-const Stats = () => {
- 
- const activityData = [
-    {
-      label: "Mes",
-      value: 0.8, // ring will use color from theme
-      color: "#023047",
-    },
-    {
-        label: "Semana",
-        value: 0.6,
-        color: "#219EBC",
-    },
-    {
-        label: "Día",
-        value: 0.2,
-        color: "#4D0C5A",
-    }
-  ];
- 
- const activityConfig = { 
-   width: 150,  
-   height: 150
- };
- 
- return (
-  <View>
-    <ActivityRings theme={"light"} legend = {true} data={activityData} config={activityConfig} /> 
-  </View>
-  );
+const StatsPie = () => {
+    return <ProgressCircle style={{ height: 150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#023047'} strokeWidth={20} />
+}
+const StatsBar = () => {
+    const fill = '#219EBC'
+    const data = [1,2,3,4,5,6]
+    return (
+        <View>
+            <BarChart style={{ height: 200}} data={data} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}/>
+            <XAxis
+                        style={{ marginTop: 10 }}
+                        data={ data }
+                        scale={scale.scaleBand}
+                        formatLabel={ (value, index) => index+1 }
+                        labelStyle={ { color: 'black' } }
+            />
+        </View>
+    )
 }  
 
 export default class Statistics extends Component {
@@ -45,12 +34,17 @@ export default class Statistics extends Component {
                     {/* <ActivityIndicator/> */}
                     <ScrollView>
                     <Text style={ styles.Title}>
-                        Productividad (entrar todos los días del mes)
+                        Cardío (al día)
                     </Text>
-                    <Stats/>
+                    <StatsPie/>
+                    <Text style={ styles.Title}>
+                        Calorias (al día)
+                    </Text>
+                    <StatsPie/>
                     <Text style={ styles.Title}>
                         Peso Cargado
                     </Text>
+                    <StatsBar/>
                     <Text style={ styles.Title}>
                         minutos
                     </Text>
@@ -75,6 +69,11 @@ const styles = StyleSheet.create({
       flex: 1,
       marginHorizontal: 16,
     },
+    box: {
+        flexDirection: 'column',
+        flex: 1,
+        marginHorizontal: 16,
+      },
     image:{
         margin: 16,
         padding: 20,

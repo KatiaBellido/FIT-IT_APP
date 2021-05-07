@@ -22,8 +22,8 @@ export default class App extends Component {
     //<Signup/>
     //<MenuTabs/>
     //<Meditation/>
-    <Meditaudios/>
-    //<Statistics/>
+    //<Meditaudios/>
+    <Statistics/>
   );
 
 }
