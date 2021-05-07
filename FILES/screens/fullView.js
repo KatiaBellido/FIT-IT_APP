@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Dimensions, StyleSheet, Modal, Share, View, Text, Switch, SafeAreaView, Alert, Image, StatusBar, ImageBackground} from 'react-native';
+import {Dimensions, StyleSheet, Modal, Share, View, Text, Switch, SafeAreaView, Alert, Image, StatusBar, ImageBackground, ScrollView} from 'react-native';
 import {Container, Content, Body, Left, Icon, Right, Title, Button} from 'native-base';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -8,6 +8,7 @@ export default class FullView extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <ScrollView>
                 <StatusBar barStyle="light-content" />
                 <ImageBackground source = {require('../assets/mugcake.jpeg')} style={styles.recetaFondo}>
                     <SafeAreaView>
@@ -50,6 +51,7 @@ export default class FullView extends Component{
                             Unimos todo con el tenedor de forma concienzuda hasta conseguir una mezcla completamente homogénea.</Text>
                     </View>
                 </View>
+                </ScrollView>
             </View>
         );
     }
