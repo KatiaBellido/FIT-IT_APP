@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
 
@@ -9,6 +9,8 @@ export default class Meditation extends Component {
             <View style={styles.container}>
                 <HeaderMenu/>
                 <SafeAreaView style={styles.containerSafe}>
+                <ScrollView>
+
                 <View style={styles.textBox}>
                     <Text style={styles.title}>
                         Meditación
@@ -58,8 +60,9 @@ export default class Meditation extends Component {
                         title="Go back"
                         color="#219EBC"
                         onPress={() => Alert.alert('Regresa si quieres')}
-                    />
+                        />
                 </View>
+                </ScrollView>
                 </SafeAreaView>
             </View>
         )
@@ -126,8 +129,7 @@ const styles = StyleSheet.create({
     },
 
     imageColumn: {
-        float: "left",
-        width: "50%",
+        width: 50,
         padding: 5,
     },
 

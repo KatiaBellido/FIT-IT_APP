@@ -56,7 +56,7 @@ export default class Rutinas extends Component{
         return(
             <>
             <View>
-                <View style={styles.safe}>
+                <View style={styles.containerSafe}>
                     <View style={styles.header}>
                         <Image source={require('../assets/LogoFIT_IT.png')} style={styles.image} />
                         <Text style={styles.text}>RUTINAS</Text>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#8ECAE6',
     },
     header: {
-        marginTop: 0,
+        marginTop: 50,
         flexDirection: "row",
         alignItems:"center",
         backgroundColor: '#8ECAE6',
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width: '95%',
         marginLeft: 12,
-        marginBottom: 8
+        marginBottom: 8,
     },
     botonFlot: {
         backgroundColor: '#8ECAE6',

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import { HeaderMenu } from "./HeaderMenu";
 
-export default class meditaudios extends Component {
+export default class MeditAudios extends Component {
     render() {
         return (
-            <View style={styles.background}>
+            <View style={styles.container}>
                 <View style={styles.container}>
                     <HeaderMenu/>
                     <SafeAreaView style={styles.containerSafe}>
@@ -16,6 +17,7 @@ export default class meditaudios extends Component {
                         </View>
                         <View style={styles.centered}>
                             <Button
+                            title=""
                             color="#219EBC"
                             border-radius="50%"
                             onPress={() => Alert.alert('Audio en pausa')}>
@@ -40,7 +42,7 @@ export default class meditaudios extends Component {
     }
 }
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
     title: {
         padding: 10,
         fontSize: 18,
@@ -70,7 +72,7 @@ const styles = Stylesheet.create({
 
     playPause: {
         color: "#219EBC",
-        borderRadius: "50%",
+        borderRadius: 50,
     },
 
     durationBar: {
@@ -80,7 +82,6 @@ const styles = Stylesheet.create({
     },
 
     centered: {
-        position: "fixed",
         top: "50%",
         left: "50%",
         marginTop: "50%",
