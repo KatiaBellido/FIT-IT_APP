@@ -1,27 +1,53 @@
 import React from 'react';
 import {Component } from 'react';
 import { StyleSheet, Text, View, ScrollView,Button, Alert, ActivityIndicator } from 'react-native';
-import { BarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
+import { StackedBarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
 import * as scale from 'd3-scale';
 
 import { HeaderMenu } from "./HeaderMenu";
 const StatsPie = () => {
-    return <ProgressCircle style={{ height: 150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#023047'} strokeWidth={20} />
+    return <ProgressCircle style={{ height: 150,width:150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#219EBC'} strokeWidth={20} backgroundColor={'rgb(105, 109, 125,0.1)'}/>
 }
 const StatsBar = () => {
-    const fill = '#219EBC'
-    const data = [1,2,3,4,5,6]
+    const data = [
+        {
+            month: new Date(2015, 0, 1),
+            calorias: 100,
+            rutina: 150,
+            meditacion: 40,
+        },
+        {
+            month: new Date(2015, 1, 1),
+            calorias: 100,
+            rutina: 150,
+            meditacion: 40,
+        },
+        {
+            month: new Date(2015, 2, 1),
+            calorias: 90,
+            rutina: 70,
+            meditacion: 40,
+        },
+        {
+            month: new Date(2015, 3, 1),
+            calorias: 40,
+            rutina: 50,
+            meditacion: 140,
+        },
+    ]
+    
+    const colors = ['#4D0C5A', '#8C15A3', '#AC1AC9',]
+    const keys = ['calorias', 'rutina', 'meditacion']
+
     return (
-        <View>
-            <BarChart style={{ height: 200}} data={data} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}/>
-            <XAxis
-                        style={{ marginTop: 10 }}
-                        data={ data }
-                        scale={scale.scaleBand}
-                        formatLabel={ (value, index) => index+1 }
-                        labelStyle={ { color: 'black' } }
-            />
-        </View>
+        <StackedBarChart
+            style={{ height: 200, width: 200}}
+            keys={keys}
+            colors={colors}
+            data={data}
+            showGrid={false}
+            contentInset={{ top: 30, bottom: 30 }}
+        />
     )
 }  
 
@@ -31,23 +57,45 @@ export default class Statistics extends Component {
             <View style={styles.container}> 
                 <HeaderMenu/>
                 <View style={styles.containerSafe}>
-                    {/* <ActivityIndicator/> */}
                     <ScrollView>
-                    <Text style={ styles.Title}>
-                        Cardío (al día)
-                    </Text>
-                    <StatsPie/>
-                    <Text style={ styles.Title}>
-                        Calorias (al día)
-                    </Text>
-                    <StatsPie/>
-                    <Text style={ styles.Title}>
-                        Peso Cargado
-                    </Text>
-                    <StatsBar/>
-                    <Text style={ styles.Title}>
-                        minutos
-                    </Text>
+                        <View style={styles.box}>
+                            <Text style={ styles.Title}>
+                                    Anillos Del Día
+                                </Text>
+                            <ScrollView horizontal={true}
+                            contentContainerStyle={{ ...styles.scrollView, width: `${100 * 3}%`}}>
+                                <Text style={ styles.Title}>
+                                    Calorías (al día)
+                                </Text>
+                                <StatsPie/>
+                                <Text style={ styles.Title}>
+                                    Ejercicio (al día)
+                                </Text>
+                                <StatsPie/>
+                                <Text style={ styles.Title}>
+                                    Meditación (al día)
+                                </Text>
+                                <StatsPie/>
+                            </ScrollView>
+                        </View>
+                        <View style={styles.divider}/>
+                        <View style={styles.box}>
+                            <Text style={ styles.Title}>
+                                    Estadísticas
+                                </Text>
+                            <ScrollView horizontal={true}
+                            contentContainerStyle={{ ...styles.scrollView, width: `${100 * 2}%`}}>
+                                <Text style={ styles.Title}>
+                                    Peso Cargado
+                                </Text>
+                                <StatsBar/>
+                                <Text style={ styles.Title}>
+                                    Minutos
+                                </Text>
+                                <StatsBar/>
+                            </ScrollView>
+                        </View>
+                        <View style={styles.divider}/>
                     <Button
                         title="Go back"
                         color="#219EBC"
@@ -66,13 +114,15 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(105,109,125, 0.1)",
     },
     containerSafe: {
-      flex: 1,
-      marginHorizontal: 16,
+        flex:1,
+        marginHorizontal: 16,
     },
     box: {
-        flexDirection: 'column',
+        marginTop:10,
         flex: 1,
-        marginHorizontal: 16,
+        height: 300,
+        alignContent: "center",
+        borderColor: "black",
       },
     image:{
         margin: 16,
@@ -87,6 +137,17 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         
+    },
+    scrollView: {
+        flexDirection: 'row',
+        overflow: 'hidden',
+      },
+    divider: {
+        borderBottomColor: '#808080',
+        borderBottomWidth: 1,
+        width: '95%',
+        marginLeft: 12,
+        marginBottom: 8,
     },
     
   });
