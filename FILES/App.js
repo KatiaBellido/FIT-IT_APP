@@ -9,6 +9,7 @@ import Rutinas from './screens/RutinasMain';
 import Meditation from './screens/MeditMenu';
 import Statistics from './screens/stats';
 import Meditaudios from './screens/MeditPlayer';
+import RecetasAdd from './screens/RecetaAdd';
 
 console.disableYellowBox = true;
 
@@ -23,7 +24,8 @@ export default class App extends Component {
     //<MenuTabs/>
     //<Meditation/>
     //<Meditaudios/>
-    <Statistics/>
+    //<Statistics/>
+    <RecetasAdd/>
   );
 
 }
