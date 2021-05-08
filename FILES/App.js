@@ -10,6 +10,8 @@ import Meditation from './screens/MeditMenu';
 import Statistics from './screens/stats';
 import Meditaudios from './screens/MeditPlayer';
 import Navigator from "./routes/drawer";
+import RecetasAdd from './screens/RecetaAdd';
+
 console.disableYellowBox = true;
 
 export default class App extends Component {
