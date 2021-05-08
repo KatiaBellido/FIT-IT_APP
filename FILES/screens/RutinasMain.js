@@ -70,15 +70,17 @@ export default class Rutinas extends Component{
                             {listaRutina.map((listaRutina, index) => {
                                 return(
                                     <Pressable onPress={() => Alert.alert('Ver rutina')}>
-                                        <View style={styles.rutinaCompleta} key={index}>
-                                            <View style={styles.rutinaInfo}>
-                                                <Text style={styles.titulo}>{listaRutina.titulo}</Text>
-                                                <Text style={styles.intense}>{listaRutina.intensidad}</Text>
-                                                <Text style={styles.date}>{listaRutina.fecha}</Text>
+                                        <View style={styles.card}>
+                                            <View style={styles.rutinaCompleta} key={index}>
+                                                <View style={styles.rutinaInfo}>
+                                                    <Text style={styles.titulo}>{listaRutina.titulo}</Text>
+                                                    <Text style={styles.intense}>{listaRutina.intensidad}</Text>
+                                                    <Text style={styles.date}>{listaRutina.fecha}</Text>
+                                                </View>
+                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
                                             </View>
-                                            <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
+                                            {/* <View style={styles.divider}/> */}
                                         </View>
-                                        <View style={styles.divider}/>
                                     </Pressable>
                                 )
                             })}
@@ -128,6 +130,12 @@ const styles = StyleSheet.create({
     },
     rutina: {
         margin: 20
+    },
+    card: {
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 1,
+        marginBottom: 16
     },
     rutinaCompleta: {
         flexDirection: 'row',
