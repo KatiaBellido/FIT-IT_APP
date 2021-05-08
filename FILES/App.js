@@ -9,7 +9,7 @@ import Rutinas from './screens/RutinasMain';
 import Meditation from './screens/MeditMenu';
 import Statistics from './screens/stats';
 import Meditaudios from './screens/MeditPlayer';
-
+import Navigator from "./routes/drawer";
 console.disableYellowBox = true;
 
 export default class App extends Component {
@@ -23,7 +23,8 @@ export default class App extends Component {
     //<MenuTabs/>
     //<Meditation/>
     //<Meditaudios/>
-    <Statistics/>
+    // <Statistics/>
+    <Navigator/>
   );
 
 }

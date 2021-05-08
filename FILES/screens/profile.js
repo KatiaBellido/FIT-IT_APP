@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import { HeaderMenu } from "./HeaderMenu";
-export default class profile extends Component {
-    render() {
+// import { HeaderMenu } from "./HeaderMenu";
+export default function Profile({ navigation }){
+    const pressHandler=(string)=>{
+        
+        navigation.navigate(string);
+    }
         return (
             <View style={styles.container}>
-                <HeaderMenu/>
+                {/* <HeaderMenu/> */}
                 <SafeAreaView style={styles.containerSafe}>
                     
                     <View style={styles.datosX}>
@@ -40,7 +43,7 @@ export default class profile extends Component {
                             Cardio
                         </Text>
                         <TouchableOpacity style={ styles.boton}
-                            onPress={() => Alert.alert('Abriendo estadísticas')}>
+                            onPress={() => pressHandler("Stats")}>
                             <Text style={ styles.Title}>
                                 Estadísticas
                             </Text>
@@ -50,15 +53,13 @@ export default class profile extends Component {
                     <Button
                         title="Go back"
                         color="#219EBC"
-                        onPress={() => Alert.alert('Regresa si quieres')}
+                        onPress={() => alert("back")}
                     />
                     </View>
                 </SafeAreaView>
             </View>
-        )
-    }
+        );
 }
-
 
 const styles = StyleSheet.create({
     container: {

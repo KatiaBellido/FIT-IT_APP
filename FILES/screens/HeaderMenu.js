@@ -1,47 +1,55 @@
 import React from 'react';
-import { StyleSheet, Text, View, Switch, Image  } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; 
-export const HeaderMenu = () =>{
-
+import { StyleSheet, Text, View, Switch, Image,Touchable, TouchableHighlight, TouchableOpacity, ImageBackground} from 'react-native';
+import { Ionicons,MaterialIcons } from '@expo/vector-icons'; 
+import menu from "../routes/drawer"
+import { Left } from 'native-base';
+export default function HeaderMenu ({navigation,title}){
+  const _openMenu =() => {
+    navigation.openDrawer();
+    // alert("Listo")
+  
+  };
     return (  
-      <View style={styles.containerSafe}>
-        <View style={styles.container}>
-          <Image source={require('../assets/LogoFIT_IT.png')} style={styles.image} />
-          <Text style={styles.text}>RECETAS</Text>
-          <Text style={styles.text}>Lunes 15 Feb</Text> 
-          <Ionicons name="ios-calendar-outline" size={45} color="#023047" />
+    
+        <View style={styles.header}>
+          <TouchableOpacity onPress={_openMenu} style={styles.image} >
+            {/* < Image source={require('../assets/LogoFIT_IT.png')} width={1} heigh={1}/> */}
+            <Image source={require('../assets/LogoFIT_IT.png')} style={{height:50,width:50, position:"absolute"}}/>
+          </TouchableOpacity>
+          {/* <MaterialIcons size={60} name="menu" style={styles.image} onPress={openMenu}/> */}
+          <View>
+          <Text style={styles.headerText}>{title}</Text>
+          </View>
+          {/* <Text style={styles.text}>Lunes 15 Feb</Text>  */}
         </View>
-      </View>  
       );
 }
+
 const styles = StyleSheet.create({
-  containerSafe: {
-    backgroundColor: '#8ECAE6',
-  },
-  container: {
-    marginTop: 50,
-    flexDirection: "row",
+  header:{
+    width:"100%",
+    height:"100%",
+    flexDirection:"row",
     alignItems:"center",
-    backgroundColor: '#8ECAE6',
-    padding:10
+    justifyContent:"center"
+
   },
   image:{
-      width: 60, 
-      height:60,
+    // position:"absolute",
+    left:-130,
+    height:50,
+    width:50,
+    marginTop:10,
+    marginBottom:10,
   },
-  switch:{
-    backgroundColor:"black",
-    flex:1,
-  },
-  text:{
+  headerText:{
+    fontWeight:"bold",
     fontSize:16,
     color: "white",
-    flex:1.7,
-    textAlign:"center"
+    letterSpacing:1,
+    padding:-5,
+    alignItems:"center"
   },
-  fecha:{
-
-  }
 
 });
 

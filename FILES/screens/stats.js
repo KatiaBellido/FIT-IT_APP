@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, ScrollView,Button, Alert, ActivityIndicator } f
 import { StackedBarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
 import * as scale from 'd3-scale';
 
-import { HeaderMenu } from "./HeaderMenu";
+// import { HeaderMenu } from "./HeaderMenu";
 const StatsPie = () => {
     return <ProgressCircle style={{ height: 150,width:150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#219EBC'} strokeWidth={20} backgroundColor={'rgb(105, 109, 125,0.1)'}/>
 }
@@ -51,11 +51,10 @@ const StatsBar = () => {
     )
 }  
 
-export default class Statistics extends Component {
-    render() {
+export default function Statistics() {
         return (
             <View style={styles.container}> 
-                <HeaderMenu/>
+                {/* <HeaderMenu/> */}
                 <View style={styles.containerSafe}>
                     <ScrollView>
                         <View style={styles.box}>
@@ -105,7 +104,6 @@ export default class Statistics extends Component {
                 </View>
             </View>
         );
-    }
 }
 
 const styles = StyleSheet.create({

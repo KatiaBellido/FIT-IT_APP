@@ -51,19 +51,10 @@ const listaRutina = [
     }
 ];
 
-export default class Rutinas extends Component{
-    render(){
+export default function Rutinas(){
         return(
             <>
             <View>
-                <View style={styles.containerSafe}>
-                    <View style={styles.header}>
-                        <Image source={require('../assets/LogoFIT_IT.png')} style={styles.image} />
-                        <Text style={styles.text}>RUTINAS</Text>
-                        <Text style={styles.text}>Lunes 15 Feb</Text> 
-                        <Ionicons name="ios-calendar-outline" size={45} color="#023047" />
-                    </View>
-                </View> 
                 <ScrollView>
                 <SafeAreaView>
                         <View style={styles.rutina}>
@@ -91,7 +82,6 @@ export default class Rutinas extends Component{
             </TouchableOpacity>
             </>
         );
-    }
 }
 
 const styles = StyleSheet.create({
