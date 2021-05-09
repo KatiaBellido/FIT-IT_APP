@@ -1,8 +1,58 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView } from 'react-native';
-
+import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
+import firebase from "../database/firebase";
 export default class Login extends Component {
+    constructor() {
+        super();
+        this.state = {
+          email: "",
+          password: "",
+          isLoading: false,
+        };
+      }
+      updateInputVal = (val, prop) => {
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
+      };
+      userLogin = () => {
+        if (this.state.email === "" && this.state.password === "") {
+          Alert.alert("Enter details to signin!");
+        } else {
+          this.setState({
+            isLoading: true,
+          });
+          firebase
+            .auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((res) => {
+              console.log(res);
+    
+              console.log("User logged-in successfully!");
+              this.setState({
+                isLoading: false,
+                email: "",
+                password: "",
+              });
+              this.props.navigation.navigate("Dashboard");
+            })
+            .catch((error) => {
+              Alert.alert(error.message);
+              this.setState({ errorMessage: error.message });
+              this.setState({
+                isLoading: false,
+              });
+            });
+        }
+      };
     render() {
+        if (this.state.isLoading) {
+            return (
+              <View style={styles.preloader}>
+                <ActivityIndicator size="large" color="#9E9E9E" />
+              </View>
+            );
+          }
         return (
             <SafeAreaView style={styles.container}>
                 <Image source={require('../assets/LogoFIT_IT.png')}
@@ -14,19 +64,27 @@ export default class Login extends Component {
                     <TextInput
                     style={styles.inputStyle}
                     placeholder="Email"
+                    value={this.state.email}
+                    onChangeText={(val) => this.updateInputVal(val, "email")}
                     />
                     <TextInput
                     style={styles.inputStyle}
                     placeholder="Password"
+                    value={this.state.password}
+                    onChangeText={(val) => this.updateInputVal(val, "password")}
+                    maxLength={15}
+                    secureTextEntry={true}
                     />
                 <View>
-                    <Text style={ styles.signupText}>
+                    <Text style={ styles.signupText}
+                    onPress={() => this.props.navigation.navigate("Signup")}>
                     Aún no te registras? Presiona SignUp 
                     </Text>
                     <View style={styles.fixToText}>
                         <Button
                         title="Login"
                         color="#219EBC"
+                        onPress={() => this.userLogin()}
                         onPress={() => Alert.alert('Login pressed')}
                         />
                         <Button
