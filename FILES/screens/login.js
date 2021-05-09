@@ -76,8 +76,7 @@ export default class Login extends Component {
                     secureTextEntry={true}
                     />
                 <View>
-                    <Text style={ styles.signupText}
-                    onPress={() => this.props.navigation.navigate("Signup")}>
+                    <Text style={ styles.signupText}>
                     Aún no te registras? Presiona SignUp 
                     </Text>
                     <View style={styles.fixToText}>
@@ -85,12 +84,10 @@ export default class Login extends Component {
                         title="Login"
                         color="#219EBC"
                         onPress={() => this.userLogin()}
-                        onPress={() => Alert.alert('Login pressed')}
                         />
                         <Button
                         title="Signup"
                         color="#219EBC"
-                        onPress={() => Alert.alert('Signup pressed')}
                         />
                         
                     </View>

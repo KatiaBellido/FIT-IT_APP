@@ -21,12 +21,12 @@ export default class App extends Component {
     //<FullView/>
     //<Rutinas/>
     //<Login/>
-    <Signup/>
+    //<Signup/>
     //<MenuTabs/>
     //<Meditation/>
     //<Meditaudios/>
     //<Statistics/>
-    //<Navigator/>
+    <Navigator/>
 
   );
 

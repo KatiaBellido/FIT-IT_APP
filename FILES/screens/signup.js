@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
-
+import firebase from "../database/firebase";
 export default class Signup extends Component {
   constructor() {
     super();
@@ -89,9 +89,7 @@ export default class Signup extends Component {
                     <Button
                     title="Signup"
                     color="#219EBC"
-                    onPress={() => this.registerUser()}
-                    onPress={() => Alert.alert('Listo! Ya estas Registrado (nota: directo de aquí te hagas el login no?)')}
-                    />
+                    onPress={() => this.registerUser()}                    />
                     <Button
                     title="Go back"
                     color="#219EBC"

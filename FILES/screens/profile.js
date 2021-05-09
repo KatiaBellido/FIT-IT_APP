@@ -7,6 +7,7 @@ export default function Profile({ navigation }){
         
         navigation.navigate(string);
     }
+    
         return (
             <View style={styles.container}>
                 {/* <HeaderMenu/> */}
