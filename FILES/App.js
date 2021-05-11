@@ -19,7 +19,7 @@ export default class App extends Component {
     return(
     //<Profile/>
     //<FullView/>
-    //<Rutinas/>
+    // <Rutinas/>
     //<Login/>
     //<Signup/>
     //<MenuTabs/>

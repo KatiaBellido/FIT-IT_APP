@@ -1,40 +1,28 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import { HeaderMenu } from "./HeaderMenu";
 
 export default class MeditAudios extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.container}>
-                    <HeaderMenu/>
                     <SafeAreaView style={styles.containerSafe}>
-                        <View style={styles.textBox}>
-                            <Text style={styles.title}>
-                                Aceptación
-                            </Text>
-                        </View>
-                        <View style={styles.centered}>
-                            <Button
-                            title=""
+                    <Image source={require('../assets/espacio.png')} style={styles.espacio}></Image>
+                    <Image source={require('../assets/cover.jpeg')} style={styles.imageCover}></Image>
+                    <View style={styles.textBox}>
+                        <Text style={styles.title}>
+                            Aceptación
+                        </Text>
+                    </View>
+                    <Image source={require('../assets/pause.png')} style={styles.imagePause}></Image>
+                    <View style={{marginVertical:30}}>
+                        <Button
+                            title="Exit"
                             color="#219EBC"
-                            border-radius="50%"
-                            onPress={() => Alert.alert('Audio en pausa')}>
-                            </Button>
-                        </View>
-                        <View style={styles.textBox}>
-                            <Text style={styles.durationBar}>
-                                ---------------------------------
-                            </Text>
-                        </View>
-                        <View style={{marginVertical:30}}>
-                            <Button
-                                title="Exit"
-                                color="#219EBC"
-                                onPress={() => Alert.alert('¿Seguro que quieres salir del audio?')}
-                            />
-                        </View>
+                            onPress={() => Alert.alert('¿Seguro que quieres salir del audio?')}
+                        />
+                    </View>
                     </SafeAreaView>
                 </View>
             </View>
@@ -45,16 +33,28 @@ export default class MeditAudios extends Component {
 const styles = StyleSheet.create({
     title: {
         padding: 10,
-        fontSize: 18,
+        paddingLeft: 30,
+        fontSize: 30,
         color: "#023047",
         fontWeight: "bold",
         textShadowRadius: 10,
         textShadowColor: "#8ECAE6",
-        textAlign: "center",
+        textAlign: "left",
+    },
+
+    desc: {
+        padding: 10,
+        fontSize: 15,
+        color: "#023047",
+        fontWeight: "normal",
+        textShadowRadius: 10,
+        textShadowColor: "#8ECAE6",
+        textAlign: "left",
     },
 
     container: {
         flex: 1,
+        backgroundColor: "#cdebf9",
     },
 
     containerSafe: {
@@ -65,26 +65,22 @@ const styles = StyleSheet.create({
 
     textBox: {
         flexDirection: 'row',
-        justifyContent: "space-around",
-        alignItems: "center",
-        marginVertical: 40,
+        marginVertical: 20,
     },
 
-    playPause: {
-        color: "#219EBC",
-        borderRadius: 50,
+    imagePause:{
+        marginHorizontal: 140,
+        width: 120,
+        height: 120,
     },
 
-    durationBar: {
-        fontSize: 25,
-        color: "#023047",
-        textAlign: "center",
+    imageCover: {
+        marginHorizontal: 25,
+        width: 350,
+        height: 350,
     },
 
-    centered: {
-        top: "50%",
-        left: "50%",
-        marginTop: "50%",
-        marginLeft: "50%",
+    espacio: {
+        height: 150,
     }
 });
