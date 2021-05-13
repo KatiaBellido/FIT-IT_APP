@@ -13,6 +13,7 @@ import RecetasStack from "./recetasStack";
 import Meditacion from "./meditacionStack";
 
 
+
 const RootDrawerNavigator=createDrawerNavigator({
     Profile:{
         screen: homeStack,
@@ -34,4 +35,10 @@ const RootDrawerNavigator=createDrawerNavigator({
     //     screen:full
     // }
 });
-export default createAppContainer(RootDrawerNavigator);
+export default createAppContainer(RootDrawerNavigator)
+// signOut = () => {
+//     firebase.auth().signOut().then(() => {
+//       this.props.navigation.navigate('Login')
+//     })
+//     .catch(error => this.setState({ errorMessage: error.message }))
+//   } 

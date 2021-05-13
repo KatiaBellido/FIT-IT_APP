@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import firebase from '../database/firebase';
 
 import { HeaderMenu } from "./HeaderMenu";
 export default class Profile extends Component{
     // static navigationOptions={
     //     title:"First page",
     //     headerTitle:()=><Header  title="Rutinas"/>
-
+    constructor() {
+        super();
+        this.state = { 
+          uid: ''
+        }
+      }
         
     // }
     render(){
+        this.state = { 
+            displayName: firebase.auth().currentUser.displayName,
+            uid: firebase.auth().currentUser.uid
+          } 
         const{navigate}=this.props.navigation;
         return (
             <View style={styles.container}>
@@ -25,7 +35,7 @@ export default class Profile extends Component{
                             <View style={styles.datosX}>
 
                                 <Text style={ styles.Title}>
-                                    Katia Yareth Bellido López
+                                {this.state.displayName}
                                 </Text>
                                 <Text style={ styles.Title}>
                                     A01023638@itesm.mx

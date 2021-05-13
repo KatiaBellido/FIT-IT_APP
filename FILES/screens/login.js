@@ -20,38 +20,38 @@ export default class Login extends Component {
         this.setState(state);
       };
       userLogin = () => {
-        this.props.navigation.navigate("Profile"); //ESTO SE COMENTA SI SE USARA LA FUNCION DE LOGIN
+        //this.props.navigation.navigate("Profile"); //ESTO SE COMENTA SI SE USARA LA FUNCION DE LOGIN
 
         //ESTO DE PUEDE DESCOMENTAR PARA VER QUE EL LOGIN FUNCIONA... ESTA COMENTADO PARA QUE NO TENGAS QUE LOGEARTE EN LAS PRUEBAS
 
-        // if (this.state.email === "" && this.state.password === "") {
-        //   Alert.alert("Enter details to signin!");
-        // } else {
-        //   this.setState({
-        //     isLoading: true,
-        //   });
-        //   firebase
-        //     .auth()
-        //     .signInWithEmailAndPassword(this.state.email, this.state.password)
-        //     .then((res) => {
-        //       console.log(res);
+        if (this.state.email === "" && this.state.password === "") {
+          Alert.alert("Inserte la información necesaria");
+        } else {
+          this.setState({
+            isLoading: true,
+          });
+          firebase
+            .auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((res) => {
+              console.log(res);
     
-        //       console.log("User logged-in successfully!");
-        //       this.setState({
-        //         isLoading: false,
-        //         email: "",
-        //         password: "",
-        //       });
-        //       this.props.navigation.navigate("Profile");
-        //     })
-        //     .catch((error) => {
-        //       Alert.alert(error.message);
-        //       this.setState({ errorMessage: error.message });
-        //       this.setState({
-        //         isLoading: false,
-        //       });
-        //     });
-        // }
+              console.log("Bienvenido!");
+              this.setState({
+                isLoading: false,
+                email: "",
+                password: "",
+              });
+              this.props.navigation.navigate("Profile");
+            })
+            .catch((error) => {
+              Alert.alert(error.message);
+              this.setState({ errorMessage: error.message });
+              this.setState({
+                isLoading: false,
+              });
+            });
+        }
       };
 
       //AQUI TERMINA TODO EL LOGIN DE PRUEBA
@@ -78,6 +78,7 @@ export default class Login extends Component {
                     value={this.state.email}
                     onChangeText={(val) => this.updateInputVal(val, "email")}
                     />
+                 
                     <TextInput
                     style={styles.inputStyle}
                     placeholder="Password"
@@ -145,9 +146,9 @@ const styles = StyleSheet.create({
     },
     image:{
         margin: 16,
-        padding: 20,
-        width: 150, 
-        height:150,
+        padding: 10,
+        width: 100, 
+        height:100,
     },
   });
   

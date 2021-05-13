@@ -20,7 +20,7 @@ export default class Signup extends Component {
 
   registerUser = () => {
     if (this.state.email === "" && this.state.password === "") {
-      Alert.alert("Enter details to signup!");
+      Alert.alert("Inserte todos los datos!");
     } else {
       this.setState({
         isLoading: true,
@@ -32,7 +32,7 @@ export default class Signup extends Component {
           res.user.updateProfile({
             displayName: this.state.displayName,
           });
-          console.log("User registered successfully!");
+          console.log("Registrado con éxito!");
           this.setState({
             isLoading: false,
             displayName: this.state.displayName,
@@ -42,7 +42,7 @@ export default class Signup extends Component {
           this.props.navigation.navigate("Login");
         })
         .catch((error) => {
-          Alert.alert("Enter details to signup!");
+          Alert.alert("Inserte todos los datos!");
           this.setState({ errorMessage: error.message });
           this.setState({
             isLoading: false,
@@ -78,6 +78,9 @@ export default class Signup extends Component {
                     value={this.state.email}
                     onChangeText={(val) => this.updateInputVal(val, "email")}
                     />
+                       <Text style={ styles.signupText}>
+                    Contraseña con una mayúscula y minimo 6 caracteres 
+                    </Text>
                     <TextInput
                     style={styles.inputStyle}
                     placeholder="Password"
@@ -86,6 +89,7 @@ export default class Signup extends Component {
                     maxLength={15}
                     secureTextEntry={true}
                     />
+                    
                     <Button
                     title="Signup"
                     color="#219EBC"
@@ -124,8 +128,8 @@ const styles = StyleSheet.create({
     image:{
         margin: 16,
         padding: 20,
-        width: 150, 
-        height:150,
+        width: 100, 
+        height:100,
     },
   });
   
