@@ -51,7 +51,8 @@ const StatsBar = () => {
     )
 }  
 
-export default function Statistics() {
+export default class Statistics extends Component{
+    render(){
         return (
             <View style={styles.container}> 
                 {/* <HeaderMenu/> */}
@@ -104,6 +105,7 @@ export default function Statistics() {
                 </View>
             </View>
         );
+    }
 }
 
 const styles = StyleSheet.create({

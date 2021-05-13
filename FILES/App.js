@@ -13,22 +13,26 @@ import Navigator from "./routes/drawer";
 import RecetasAdd from './screens/RecetaAdd';
 
 console.disableYellowBox = true;
-
+var con=0;
 export default class App extends Component {
+  
   render(){
-    return(
-    //<Profile/>
-    //<FullView/>
-    // <Rutinas/>
-    //<Login/>
-    //<Signup/>
-    //<MenuTabs/>
-    //<Meditation/>
-    //<Meditaudios/>
-    //<Statistics/>
-    <Navigator/>
+    if(con==0){
+      return(<Navigator/>)
+    }
+  //   return(
+  //   //<Profile/>
+  //   //<FullView/>
+  //   // <Rutinas/>
+  //   //<Login/>
+  //   //<Signup/>
+  //   //<MenuTabs/>
+  //   // <Meditation/>
+  //   //<Meditaudios/>
+  //   //<Statistics/>
+  //   // <Navigator/>
 
-  );
+  // );
 
 }
 }

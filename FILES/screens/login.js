@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
 import firebase from "../database/firebase";
 export default class Login extends Component {
+    // static navigationOptions={
+    //   title:"First page",
+    //   headerLeft:()=>null,
+    // }
     constructor() {
         super();
         this.state = {
@@ -16,36 +20,39 @@ export default class Login extends Component {
         this.setState(state);
       };
       userLogin = () => {
-        if (this.state.email === "" && this.state.password === "") {
-          Alert.alert("Enter details to signin!");
-        } else {
-          this.setState({
-            isLoading: true,
-          });
-          firebase
-            .auth()
-            .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((res) => {
-              console.log(res);
+        alert("HOLA");
+        this.props.navigation.navigate("Profile")
+        // if (this.state.email === "" && this.state.password === "") {
+        //   Alert.alert("Enter details to signin!");
+        // } else {
+        //   this.setState({
+        //     isLoading: true,
+        //   });
+        //   firebase
+        //     .auth()
+        //     .signInWithEmailAndPassword(this.state.email, this.state.password)
+        //     .then((res) => {
+        //       console.log(res);
     
-              console.log("User logged-in successfully!");
-              this.setState({
-                isLoading: false,
-                email: "",
-                password: "",
-              });
-              this.props.navigation.navigate("Dashboard");
-            })
-            .catch((error) => {
-              Alert.alert(error.message);
-              this.setState({ errorMessage: error.message });
-              this.setState({
-                isLoading: false,
-              });
-            });
-        }
+        //       console.log("User logged-in successfully!");
+        //       this.setState({
+        //         isLoading: false,
+        //         email: "",
+        //         password: "",
+        //       });
+        //       this.props.navigation.navigate("Dashboard");
+        //     })
+        //     .catch((error) => {
+        //       Alert.alert(error.message);
+        //       this.setState({ errorMessage: error.message });
+        //       this.setState({
+        //         isLoading: false,
+        //       });
+        //     });
+        // }
       };
     render() {
+        const{navigate}=this.props.navigation;
         if (this.state.isLoading) {
             return (
               <View style={styles.preloader}>

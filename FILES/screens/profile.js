@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
-// import { HeaderMenu } from "./HeaderMenu";
-export default function Profile({ navigation }){
-    const pressHandler=(string)=>{
+
+import { HeaderMenu } from "./HeaderMenu";
+export default class Profile extends Component{
+    // static navigationOptions={
+    //     title:"First page",
+    //     headerTitle:()=><Header  title="Rutinas"/>
+
         
-        navigation.navigate(string);
-    }
-    
+    // }
+    render(){
+        const{navigate}=this.props.navigation;
         return (
             <View style={styles.container}>
                 {/* <HeaderMenu/> */}
@@ -44,7 +48,7 @@ export default function Profile({ navigation }){
                             Cardio
                         </Text>
                         <TouchableOpacity style={ styles.boton}
-                            onPress={() => pressHandler("Stats")}>
+                            onPress={() =>this.props.navigation.navigate("Stats")}>
                             <Text style={ styles.Title}>
                                 Estadísticas
                             </Text>
@@ -60,6 +64,7 @@ export default function Profile({ navigation }){
                 </SafeAreaView>
             </View>
         );
+    }
 }
 
 const styles = StyleSheet.create({

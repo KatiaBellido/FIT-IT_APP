@@ -51,7 +51,8 @@ const listaRutina = [
     }
 ];
 
-export default function Rutinas(){
+export default class Rutinas extends Component{
+    render(){
         return(
             <>
             <View>
@@ -84,6 +85,7 @@ export default function Rutinas(){
             </TouchableOpacity>
             </>
         );
+    }
 }
 
 const styles = StyleSheet.create({
