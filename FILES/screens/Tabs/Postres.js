@@ -15,7 +15,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -29,7 +29,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -43,7 +43,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -57,7 +57,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -71,7 +71,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -85,7 +85,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -99,7 +99,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -113,7 +113,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -127,7 +127,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>

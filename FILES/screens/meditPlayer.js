@@ -8,7 +8,6 @@ export default class MeditAudios extends Component {
             <View style={styles.container}>
                 <View style={styles.container}>
                     <SafeAreaView style={styles.containerSafe}>
-                    <Image source={require('../assets/espacio.png')} style={styles.espacio}></Image>
                     <Image source={require('../assets/cover.jpeg')} style={styles.imageCover}></Image>
                     <View style={styles.textBox}>
                         <Text style={styles.title}>
@@ -59,8 +58,7 @@ const styles = StyleSheet.create({
 
     containerSafe: {
         flex: 1,
-        marginHorizontal: 16,
-        paddingTop: 20,
+        paddingTop: 10,
     },
 
     textBox: {
@@ -76,11 +74,11 @@ const styles = StyleSheet.create({
 
     imageCover: {
         marginHorizontal: 25,
-        width: 350,
-        height: 350,
+        width: 250,
+        height: 250,
     },
 
     espacio: {
-        height: 150,
+        height: 20,
     }
 });

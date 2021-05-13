@@ -11,21 +11,18 @@ export default class TabsExample extends Component {
   render() {
     return (
       <>
-      <Container>
-          <HeaderMenu />
         <Tabs>
           <Tab heading="Platillos">
-            <Tab1 />
+            <Tab1 navigation={this.props.navigation}/>
           </Tab>
           <Tab heading="Bebidas">
-            <Tab2 />
+            <Tab2 navigation={this.props.navigation}/>
           </Tab>
           <Tab heading="Postres">
-            <Tab3 />
+            <Tab3 navigation={this.props.navigation}/>
           </Tab>
         </Tabs>
-      </Container>
-      <TouchableOpacity style={styles.botonFlot} onPress={() => Alert.alert('Agregar receta')}>
+      <TouchableOpacity style={styles.botonFlot} onPress={() => this.props.navigation.navigate("Aniadir")}>
         <Entypo name="plus" size={36} color="#023047" />
       </TouchableOpacity>
       </>

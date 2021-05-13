@@ -9,12 +9,17 @@ const ingredientes = [
         name: "harina"
     }
 ];
-
+const _submit=(props)=>{
+    alert("Agregada")
+    
+    props.navigation.navigate("Recetas")
+}
 export default class RecetasAdd extends Component{
+
     render(){
+
         return(
             <>
-            <HeaderMenu/>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titulos}>Nueva Receta</Text>
                 <TextInput
@@ -47,7 +52,7 @@ export default class RecetasAdd extends Component{
                     <Button
                         title="Agregar Receta"
                         color="#023047"
-                        onPress={() => Alert.alert('Receta Agregado')}
+                        onPress={()=>_submit(this.props)}
                     />
                 </View>
             </SafeAreaView>

@@ -6,17 +6,16 @@ import { HeaderMenu } from "./HeaderMenu";
 export default class Meditation extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <HeaderMenu/>
                 <SafeAreaView style={styles.containerSafe}>
                 <ScrollView>
-
                 <View style={styles.textBox}>
                     <Text style={styles.title}>
                         Meditaciones guiadas para cualquier momento y ocasión
                     </Text>
                 </View>
-                    <Image source={require('../assets/med1.jpg')} style={styles.image}></Image>
+                    <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
+                        <Image source={require('../assets/med1.jpg')} style={styles.image}></Image>
+                    </TouchableOpacity>
                     <Text style={styles.descTtitle}>
                         Aceptación
                     </Text>
@@ -46,7 +45,7 @@ export default class Meditation extends Component {
                     </Text>
                 </ScrollView>
                 </SafeAreaView>
-            </View>
+            
         )
     }
 }

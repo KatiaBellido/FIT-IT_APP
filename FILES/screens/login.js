@@ -20,36 +20,35 @@ export default class Login extends Component {
         this.setState(state);
       };
       userLogin = () => {
-        alert("HOLA");
-        this.props.navigation.navigate("Profile")
-        // if (this.state.email === "" && this.state.password === "") {
-        //   Alert.alert("Enter details to signin!");
-        // } else {
-        //   this.setState({
-        //     isLoading: true,
-        //   });
-        //   firebase
-        //     .auth()
-        //     .signInWithEmailAndPassword(this.state.email, this.state.password)
-        //     .then((res) => {
-        //       console.log(res);
+        
+        if (this.state.email === "" && this.state.password === "") {
+          Alert.alert("Enter details to signin!");
+        } else {
+          this.setState({
+            isLoading: true,
+          });
+          firebase
+            .auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((res) => {
+              console.log(res);
     
-        //       console.log("User logged-in successfully!");
-        //       this.setState({
-        //         isLoading: false,
-        //         email: "",
-        //         password: "",
-        //       });
-        //       this.props.navigation.navigate("Dashboard");
-        //     })
-        //     .catch((error) => {
-        //       Alert.alert(error.message);
-        //       this.setState({ errorMessage: error.message });
-        //       this.setState({
-        //         isLoading: false,
-        //       });
-        //     });
-        // }
+              console.log("User logged-in successfully!");
+              this.setState({
+                isLoading: false,
+                email: "",
+                password: "",
+              });
+              this.props.navigation.navigate("Profile");
+            })
+            .catch((error) => {
+              Alert.alert(error.message);
+              this.setState({ errorMessage: error.message });
+              this.setState({
+                isLoading: false,
+              });
+            });
+        }
       };
     render() {
         const{navigate}=this.props.navigation;
@@ -95,6 +94,7 @@ export default class Login extends Component {
                         <Button
                         title="Signup"
                         color="#219EBC"
+                        onPress={()=>this.props.navigation.navigate("SignUp")}
                         />
                         
                     </View>

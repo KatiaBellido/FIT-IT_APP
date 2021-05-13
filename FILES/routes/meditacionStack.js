@@ -3,40 +3,35 @@ import { createAppContainer} from 'react-navigation';
 import React from "react"
 import {StyleSheet}from "react-native"
 import rutinas from "../screens/RutinasMain";
-import full from "../screens/fullView";
+import Full from "../screens/fullView";
 import profile from "../screens/profile";
 import stats from "../screens/stats";
 import Header from "../screens/HeaderMenu"
 import Login from "../screens/login"
-import SignUp from "../screens/signup"
+import Platillos from "../screens/Tabs/platillos"
+import lasRecetas from "../screens/menu"
+import RecetaAdd from "../screens/recetaAdd"
+import MeditMenu from "../screens/meditMenu"
+import MeditPlayer from "../screens/meditPlayer"
 const screens={
-    Profile:{
-        screen: profile,
+    Meditacion:{
+        screen: MeditMenu,
         navigationOptions:({navigation})=>{
             return{
-                headerTitle:()=><Header navigation={navigation} title="Profile"/>,
+                headerTitle:()=><Header navigation={navigation} title="Meditacion"/>,
                  headerLeft:()=>null
             }
         }
     },
-    Stats:{
-        screen:stats
-    },
-    Login:{
-      screen:Login
-    },
-    SignUp:{
-      screen:SignUp
+    Reproductor:{
+        screen: MeditPlayer
     }
-    // Full:{
-    //     screen:full
-    // }
 }
-const HomeStack =createStackNavigator(screens,{
+const MeditationStack =createStackNavigator(screens,{
   defaultNavigationOptions: {
       headerTintColor: "#555",
       headerStyle:{backgroundColor:'#8ECAE6'}
   },
-  initialRouteName:"Login"
+  initialRouteName:"Meditacion"
 });
-export default createAppContainer(HomeStack);
+export default createAppContainer(MeditationStack);

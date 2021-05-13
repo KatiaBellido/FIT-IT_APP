@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
-export default class ListThumbnailExample extends Component {
+export default class Platillos extends Component {
   render() {
     return (
-      <Container>
         <Content>
           <List>
             <ListItem thumbnail>
@@ -15,7 +14,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -29,7 +28,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -43,7 +42,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -57,7 +56,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -71,7 +70,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -85,7 +84,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -99,7 +98,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -113,7 +112,7 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
@@ -127,14 +126,13 @@ export default class ListThumbnailExample extends Component {
                 <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
                   <Text>View</Text>
                 </Button>
               </Right>
             </ListItem>
           </List>
         </Content>
-      </Container>
     );
   }
 }

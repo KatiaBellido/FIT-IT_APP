@@ -14,9 +14,6 @@ export default class FullView extends Component{
                     <SafeAreaView>
                         <View style={styles.menubar}>
                             <View style={styles.back}>
-                                <AntDesign name="arrowleft" size={24} color="#fff" onPress={() => Alert.alert('Regresa si quieres')}/>  
-                            </View>
-                            <View style={styles.back}>
                                 <AntDesign name="heart" size={24} color="#fff" style={styles.heart} onPress={() => Alert.alert('Me gusta')}/>
                                 <AntDesign name="sharealt" size={24} color="#fff" style={styles.share} onPress={() => Alert.alert('Compartir')}/>
                             </View>

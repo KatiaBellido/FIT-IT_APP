@@ -89,11 +89,7 @@ export default class Signup extends Component {
                     <Button
                     title="Signup"
                     color="#219EBC"
-                    onPress={() => this.registerUser()}                    />
-                    <Button
-                    title="Go back"
-                    color="#219EBC"
-                    onPress={() => Alert.alert('Regresa si quieres')}
+                    onPress={() => this.registerUser()}                    
                     />
             
             </SafeAreaView>
