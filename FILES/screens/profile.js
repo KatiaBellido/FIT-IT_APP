@@ -14,6 +14,12 @@ export default class Profile extends Component{
           uid: ''
         }
       }
+      signOut = () => {
+        firebase.auth().signOut().then(() => {
+          this.props.navigation.navigate('Login')
+        })
+        .catch(error => this.setState({ errorMessage: error.message }))
+      } 
         
     // }
     render(){
@@ -67,6 +73,11 @@ export default class Profile extends Component{
                     <View style={{marginVertical:30}}>
 
                     </View>
+                    <Button
+                    color="#3740FE"
+                    title="Cerrar Sesión"
+                    onPress={() => this.signOut()}
+                    />
                 </SafeAreaView>
             </View>
         );
