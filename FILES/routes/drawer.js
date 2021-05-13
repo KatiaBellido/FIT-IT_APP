@@ -20,14 +20,14 @@ const RootDrawerNavigator=createDrawerNavigator({
     Rutinas:{
         screen:rutinasStack,
     },
-    Logout:{
-        screen:Login,
-    },
     Recetas:{
         screen:RecetasStack
     },
     Meditacion:{
         screen:Meditacion
+    },
+    Logout:{
+        screen:Login,
     }
 
     // Full:{

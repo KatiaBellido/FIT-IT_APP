@@ -55,11 +55,7 @@ export default class Profile extends Component{
                         </TouchableOpacity>
                     </View>
                     <View style={{marginVertical:30}}>
-                    <Button
-                        title="Go back"
-                        color="#219EBC"
-                        onPress={() => alert("back")}
-                    />
+
                     </View>
                 </SafeAreaView>
             </View>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
-import { HeaderMenu } from "./HeaderMenu";
 
 export default class Meditation extends Component {
     render() {
@@ -14,7 +12,7 @@ export default class Meditation extends Component {
                     </Text>
                 </View>
                     <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
-                        <Image source={require('../assets/med1.jpg')} style={styles.image}></Image>
+                        <Image source={require('../assets/med1.jpg')} style={{height:250,width:250, position:"absolute"}}></Image>
                     </TouchableOpacity>
                     <Text style={styles.descTtitle}>
                         Aceptación
@@ -22,21 +20,27 @@ export default class Meditation extends Component {
                     <Text style={styles.descText}>
                         Aprende a soltar, dejar fluir, y aceptar.
                     </Text>
-                    <Image source={require('../assets/med2.jpg')} style={styles.image}></Image>
+                    <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
+                    <Image source={require('../assets/med2.jpg')} style={{height:250,width:250, position:"absolute"}}></Image>
+                    </TouchableOpacity>
                     <Text style={styles.descTtitle}>
                         Apreciación
                     </Text>
                     <Text style={styles.descText}>
                         Descubre un sentido renovado de la gratitud por la vida.
                     </Text>
-                    <Image source={require('../assets/med3.jpg')} style={styles.image}></Image>
+                    <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
+                    <Image source={require('../assets/med3.jpg')} style={{height:250,width:250, position:"absolute"}}></Image>
+                    </TouchableOpacity>
                     <Text style={styles.descTtitle}>
                         Balance
                     </Text>
                     <Text style={styles.descText}>
                         Reconoce la calma y conviértete en alguien menos explosivo.
                     </Text>
-                    <Image source={require('../assets/med4.jpg')} style={styles.image}></Image>
+                    <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
+                    <Image source={require('../assets/med4.jpg')} style={{height:250,width:250, position:"absolute"}}></Image>
+                    </TouchableOpacity>
                     <Text style={styles.descTtitle}>
                         Concentración
                     </Text>
@@ -99,15 +103,11 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
 
-    imageColumn: {
-        width: 50,
-        padding: 5,
-    },
-
     image:{
         margin: 16,
         padding: 20,
         width: 350, 
         height: 230,
+        left:30
     }
 });

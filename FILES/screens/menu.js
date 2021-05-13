@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs, Left, Center, Body, Title, Right} from 'native-base';
 import { StyleSheet, Text, View, Switch, Image, TouchableOpacity, Alert} from 'react-native';
-import { HeaderMenu } from "./HeaderMenu";
 import { Entypo } from '@expo/vector-icons';
 import Tab1 from './Tabs/platillos';
 import Tab2 from './Tabs/Bebidas';
