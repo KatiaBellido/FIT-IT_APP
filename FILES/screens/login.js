@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
 import firebase from "../database/firebase";
+
 export default class Login extends Component {
     // static navigationOptions={
     //   title:"First page",
@@ -23,6 +24,14 @@ export default class Login extends Component {
         //this.props.navigation.navigate("Profile"); //ESTO SE COMENTA SI SE USARA LA FUNCION DE LOGIN
 
         //ESTO DE PUEDE DESCOMENTAR PARA VER QUE EL LOGIN FUNCIONA... ESTA COMENTADO PARA QUE NO TENGAS QUE LOGEARTE EN LAS PRUEBAS
+
+        const dbh = firebase.firestore();
+
+        dbh.collection("Rutinas ").doc("Ejemplo1").set({
+          employment: "plumber1",
+          outfitColor: "red",
+          specialAttack: "fireball"
+        })
 
         if (this.state.email === "" && this.state.password === "") {
           Alert.alert("Inserte la información necesaria");

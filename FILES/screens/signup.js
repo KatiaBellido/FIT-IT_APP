@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
-import firebase from "../database/firebase";
+//import firebase from "../database/firebase";
+
 export default class Signup extends Component {
   constructor() {
     super();
