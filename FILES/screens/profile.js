@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import firebase from '../database/firebase';
+import { Fontisto } from '@expo/vector-icons'; 
 
 import { HeaderMenu } from "./HeaderMenu";
 export default class Profile extends Component{
@@ -25,7 +26,8 @@ export default class Profile extends Component{
     render(){
         this.state = { 
             displayName: firebase.auth().currentUser.displayName,
-            uid: firebase.auth().currentUser.uid
+            uid: firebase.auth().currentUser.uid,
+            email: firebase.auth().currentUser.email
           } 
         const{navigate}=this.props.navigation;
         return (
@@ -35,28 +37,17 @@ export default class Profile extends Component{
                     
                     <View style={styles.datosX}>
                         <View style={styles.datosBox}>
-                            <Image source={require('../assets/favicon.png')}
-                            style={styles.image}
-                            />
+                            <Fontisto name="user-secret" size={60} color="black"/>
                             <View style={styles.datosX}>
-
                                 <Text style={ styles.Title}>
                                 {this.state.displayName}
                                 </Text>
                                 <Text style={ styles.Title}>
-                                    A01023638@itesm.mx
+                                {this.state.email}
                                 </Text>
-
                             </View>
                         </View>
-                    
-                        <Text style={ styles.Title}>
-                            20 años
-                        </Text>
-                        <Text style={ styles.Title}>
-                            54 kg
-                        </Text>
-                        
+
                         <Text style={styles.Title}>
                             3 Rutinas
                         </Text>
@@ -71,7 +62,6 @@ export default class Profile extends Component{
                         </TouchableOpacity>
                     </View>
                     <View style={{marginVertical:30}}>
-
                     </View>
                     <Button
                     color="#3740FE"

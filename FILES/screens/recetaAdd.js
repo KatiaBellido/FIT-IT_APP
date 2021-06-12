@@ -20,7 +20,7 @@ const _submit=(props, data)=>{
     dbh.collection("SugerenciasReceta").doc(docBD).set({
         categoria: "POSTRES",
         imagen: "google.com",
-        ingredientes: "Arroz",
+        ingredientes: "chocolate",
         nombre: data.receta,
         preparacion: data.instrucciones
     })

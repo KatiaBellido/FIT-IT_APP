@@ -12,13 +12,11 @@ export default class Signup extends Component {
       isLoading: false,
     };
   }
-
   updateInputVal = (val, prop) => {
     const state = this.state;
     state[prop] = val;
     this.setState(state);
   };
-
   registerUser = () => {
     if (this.state.email === "" && this.state.password === "") {
       Alert.alert("Inserte todos los datos!");
