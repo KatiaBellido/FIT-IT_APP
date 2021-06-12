@@ -3,9 +3,12 @@ import {Component } from 'react';
 import { StyleSheet, Text, View, ScrollView,Button, Alert, ActivityIndicator } from 'react-native';
 import { StackedBarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
 import * as scale from 'd3-scale';
+import firebase from '../database/firebase';
+
 
 // import { HeaderMenu } from "./HeaderMenu";
 const StatsPie = () => {
+
     return <ProgressCircle style={{ height: 150,width:150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#219EBC'} strokeWidth={20} backgroundColor={'rgb(105, 109, 125,0.1)'}/>
 }
 const StatsBar = () => {
@@ -52,6 +55,13 @@ const StatsBar = () => {
 }  
 
 export default class Statistics extends Component{
+    constructor() {
+        super();
+        this.state = { 
+          uid: firebase.auth().currentUser.uid,
+          calorias: 0.7,
+        }
+    }
     render(){
         return (
             <View style={styles.container}> 
@@ -92,15 +102,10 @@ export default class Statistics extends Component{
                                 <Text style={ styles.Title}>
                                     Minutos
                                 </Text>
-                                <StatsBar/>
+                                <StatsBar />
                             </ScrollView>
                         </View>
                         <View style={styles.divider}/>
-                    <Button
-                        title="Go back"
-                        color="#219EBC"
-                        onPress={() => Alert.alert('Regresa si quieres')}
-                        />
                     </ScrollView>
                 </View>
             </View>

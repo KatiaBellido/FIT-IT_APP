@@ -2,20 +2,49 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, FlatList } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
+import firebase from '../database/firebase';
 
 const ingredientes = [
     {
         id: 1,
         name: "harina"
     }
-];
-const _submit=(props)=>{
-    alert("Agregada")
     
+];
+const _submit=(props, data)=>{
+    console.log(Object.values(data));
+    const docBD = data.uid+"_"+data.receta ;
+    console.log(docBD);
+    const dbh = firebase.firestore();
+    
+    dbh.collection("SugerenciasReceta").doc(docBD).set({
+        categoria: "POSTRES",
+        imagen: "google.com",
+        ingredientes: "Arroz",
+        nombre: data.receta,
+        preparacion: data.instrucciones
+    })
+
+    alert("Agregada")
     props.navigation.navigate("Recetas")
 }
 export default class RecetasAdd extends Component{
 
+    constructor() {
+        super();
+        this.state = { 
+          uid: firebase.auth().currentUser.uid,
+          receta: "",
+          instrucciones: "",
+          ingredientes: "",
+        }
+      };
+
+      updateInputVal = (val, prop) => {
+        const state = this.state;
+        state[prop] = val;
+        this.setState(state);
+      };
     render(){
 
         return(
@@ -25,6 +54,8 @@ export default class RecetasAdd extends Component{
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="Título"
+                    value={this.state.receta}
+                    onChangeText={(val) => this.updateInputVal(val, "receta")}
                 />
                 <Text style={styles.sub}> Ingredientes </Text>
                 <View style={styles.ing}>
@@ -47,12 +78,14 @@ export default class RecetasAdd extends Component{
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="Pasos"
+                    value={this.state.instrucciones}
+                    onChangeText={(val) => this.updateInputVal(val, "instrucciones")}
                 />
                 <View style={styles.botonFinal}>
                     <Button
                         title="Agregar Receta"
                         color="#023047"
-                        onPress={()=>_submit(this.props)}
+                        onPress={()=>_submit(this.props, this.state)}
                     />
                 </View>
             </SafeAreaView>
