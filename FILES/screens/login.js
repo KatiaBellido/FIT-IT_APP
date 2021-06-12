@@ -27,7 +27,7 @@ export default class Login extends Component {
 
         const dbh = firebase.firestore();
 
-        dbh.collection("Rutinas ").doc("Ejemplo1").set({
+        dbh.collection("YaJala").doc("sisirve").set({
           employment: "plumber1",
           outfitColor: "red",
           specialAttack: "fireball"
