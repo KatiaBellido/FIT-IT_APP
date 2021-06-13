@@ -9,13 +9,25 @@ import { get } from 'react-native/Libraries/Utilities/PixelRatio';
 const db=firebase.firestore().collection("users");
 
 async function getData() {
-    const dbRef = db.doc(firebase.auth().currentUser.uid);
-    const doc = await dbRef.get();
-    if (!doc.exists) {
-        console.log('No such document!');
-      } else {
-        return doc.data();
-      }
+    try {
+        const dbRef = db.doc(firebase.auth().currentUser.uid);
+        const doc = await dbRef.get();
+        if (!doc.exists) {
+            console.log('No such document!');
+          } else {
+            return doc.data();
+          }
+        
+    }
+    catch (error) {
+        //por el momento no sirve pero es por si  hay algun error
+        objeto = Object.create(Object.prototype, {
+            name: {value:"error - offline"},
+            email: {value:"error - offline"},
+            edad: {value:"error - offline"}
+        })
+        console.log(error);
+    }
 }
 
 export default function Profile({ navigation: { navigate } } ) {
@@ -62,7 +74,9 @@ export default function Profile({ navigation: { navigate } } ) {
                                 </Text>
                             </View>
                         </View>
-
+                        <Text style={styles.Title}>
+                            {user.email}
+                        </Text>
                         <Text style={styles.Title}>
                             3 Rutinas
                         </Text>
