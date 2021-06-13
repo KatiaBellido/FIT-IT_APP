@@ -34,33 +34,32 @@ export default class Profile extends Component{
           return nombre;
       }
       
-
+      
       // }
       render(){
           this.state = { 
-              displayName: firebase.auth().currentUser.displayName,
+              displayName: getData().then((data) => { return data; }),
               uid: firebase.auth().currentUser.uid,
               email: firebase.auth().currentUser.email,
             }
             // const fetch=async()=>{
-            //     const response=firebase.firestore().collection("users");
-            //     const data=await (await response.doc(this.state.uid).get()).data;
-            //     //console.log(data);
-            // }
-        const getData = async()=>{
-            const dbRef=db.doc(this.state.uid);
-            const doc=await dbRef.get();
-            const user=doc.data();
-            console.log(user);
-            //CON ESTA FUNCION SE LOGRAN IMPRIMIR YA EL OBJETO... 
-            //LO QUE SIGUE ES GUARDARLO TAL Y COMO LO HACEMOS EN LA VARIABLE STATE PARA PODER USARLA MAS ADELANTE
-            //USER ES UN OBJETO AL CUAL SE LE PUEDE SACAR LOS COMPONENTES COMO DICCIONARIO
-
-        }
-        getData();
-
-        
-
+                //     const response=firebase.firestore().collection("users");
+                //     const data=await (await response.doc(this.state.uid).get()).data;
+                //     //console.log(data);
+                // }
+                
+                async function getData() {
+                    const dbRef=db.doc(this.state.uid);
+                    const doc=await dbRef.get();
+                    const user= await doc.data();
+                    //CON ESTA FUNCION SE LOGRAN IMPRIMIR YA EL OBJETO... 
+                    //LO QUE SIGUE ES GUARDARLO TAL Y COMO LO HACEMOS EN LA VARIABLE STATE PARA PODER USARLA MAS ADELANTE
+                    //USER ES UN OBJETO AL CUAL SE LE PUEDE SACAR LOS COMPONENTES COMO DICCIONARIO
+                    return user.name;
+                }
+            //this.setState({displayName: getData().then((data) => { return data; })})
+                
+    
 
         const{navigate}=this.props.navigation;
         return (
@@ -73,6 +72,7 @@ export default class Profile extends Component{
                             <Fontisto name="user-secret" size={60} color="black"/>
                             <View style={styles.datosX}>
                                 <Text style={ styles.Title}>
+                                {this.state.displayName}
                                 </Text>
                                 <Text style={ styles.Title}>
                                 {this.state.email}
