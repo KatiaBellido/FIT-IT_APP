@@ -3,51 +3,64 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
 import {View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity} from 'react-native';
 import {Card, CardItem} from 'native-base';
-import { Ionicons } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons';
 
 const listaRutina = [
     {
         id: '1',
-        titulo: "Pierna",
-        intensidad: "Alta",
-        fecha: "06/05/2021"
+        titulo: "Chin-Ups",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '2',
-        titulo: "Bicep",
-        intensidad: "Moderada",
-        fecha: "07/05/2021"
+        titulo: "Barbell Front Press",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '3',
-        titulo: "Pompa",
-        intensidad: "Baja",
-        fecha: "01/05/2021"
+        titulo: "Dumbbell One-Arm Rows",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '4',
-        titulo: "Tricep",
-        intensidad: "Baja",
-        fecha: "02/05/2021"
+        titulo: "Incline Barbell Bench Press",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '5',
-        titulo: "Brazo",
-        intensidad: "Alta",
-        fecha: "10/05/2021"
+        titulo: "Bench Dips",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '6',
-        titulo: "Abdomen",
-        intensidad: "Intermedia",
-        fecha: "14/05/2021"
+        titulo: "Barbell Curls",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     },
     {
         id: '7',
-        titulo: "Brazo",
-        intensidad: "Baja",
-        fecha: "03/05/2021"
+        titulo: "Press Frances",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
+    },
+    {
+        id: '8',
+        titulo: "Incline Dumbbells Curls",
+        series: "1 serie",
+        repos: "12 repeticiones",
+        peso: "10.00 kg"
     }
 ];
 
@@ -66,10 +79,12 @@ export default class Rutinas extends Component{
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>
                                                     <Text style={styles.titulo}>{listaRutina.titulo}</Text>
-                                                    <Text style={styles.intense}>{listaRutina.intensidad}</Text>
-                                                    <Text style={styles.date}>{listaRutina.fecha}</Text>
+                                                    <Text style={styles.series}>{listaRutina.series}</Text>
+                                                    <Text style={styles.extra}>{listaRutina.repos} · {listaRutina.peso}</Text>
                                                 </View>
-                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
+                                                <View style={styles.icon}>
+                                                    <Entypo name="chevron-thin-right" size={16} color="black" />
+                                                </View>
                                             </View>
                                             <View style={styles.divider}/>
                                         </View>
@@ -110,34 +125,26 @@ const styles = StyleSheet.create({
         textAlign:"center"
     },
     titulo: {
-        fontSize: 28,
+        fontSize: 20,
         fontWeight: 'bold'
     },
-    intense: {
-        fontSize: 16
+    series: {
+        fontSize: 12
     },
-    date: {
+    extra: {
         fontSize: 12,
         opacity: 0.6
-    },
-    rutina: {
-        margin: 12
     },
     rutinaCompleta: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 12
+        marginBottom: 12,
+        marginLeft: 12,
+        marginTop: 8
     },
     rutinaInfo: {
         flex: 1,
         marginLeft: 12
-    },
-    divider: {
-        borderBottomColor: '#808080',
-        borderBottomWidth: 1,
-        width: '95%',
-        marginLeft: 12,
-        marginBottom: 4,
     },
     botonFlot: {
         backgroundColor: '#8ECAE6',
@@ -149,5 +156,17 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    icon: {
+        marginRight: 16
+    },
+    card: {
+        backgroundColor: "#fafbfb",
+        width: '100%'
+    },
+    divider: {
+        borderBottomColor: '#a5a5a5',
+        borderBottomWidth: 1,
+        width: '100%'
     }
 });
