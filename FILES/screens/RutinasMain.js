@@ -69,7 +69,9 @@ export default class Rutinas extends Component{
                                                     <Text style={styles.intense}>{listaRutina.intensidad}</Text>
                                                     <Text style={styles.date}>{listaRutina.fecha}</Text>
                                                 </View>
-                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
+                                                <View style={styles.icon}>
+                                                    <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
+                                                </View>
                                             </View>
                                             <View style={styles.divider}/>
                                         </View>
@@ -110,34 +112,26 @@ const styles = StyleSheet.create({
         textAlign:"center"
     },
     titulo: {
-        fontSize: 28,
+        fontSize: 20,
         fontWeight: 'bold'
     },
-    intense: {
-        fontSize: 16
+    series: {
+        fontSize: 12
     },
-    date: {
+    extra: {
         fontSize: 12,
         opacity: 0.6
-    },
-    rutina: {
-        margin: 12
     },
     rutinaCompleta: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 12
+        marginBottom: 12,
+        marginLeft: 12,
+        marginTop: 8
     },
     rutinaInfo: {
         flex: 1,
         marginLeft: 12
-    },
-    divider: {
-        borderBottomColor: '#808080',
-        borderBottomWidth: 1,
-        width: '95%',
-        marginLeft: 12,
-        marginBottom: 4,
     },
     botonFlot: {
         backgroundColor: '#8ECAE6',
@@ -149,5 +143,17 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    icon: {
+        marginRight: 16
+    },
+    card: {
+        backgroundColor: "#fafbfb",
+        width: '100%'
+    },
+    divider: {
+        borderBottomColor: '#a5a5a5',
+        borderBottomWidth: 1,
+        width: '100%'
     }
 });

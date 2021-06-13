@@ -24,7 +24,7 @@ export default class App extends Component {
 
     //<Profile/>
     //<FullView/>
-    //<Rutinas/>
+    <Rutinas/>
     //<Login/>
     //<Signup/>
     //<MenuTabs/>
@@ -32,7 +32,7 @@ export default class App extends Component {
     //<Meditaudios/>
     //<Statistics/>
     //<Navigator/>
-    <RecetasAdd/>
+    //<RecetasAdd/>
     //<RutinaAdd/>
     //<Ejercicios/>
     //<EjercicioAdd/>
