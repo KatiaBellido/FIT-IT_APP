@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, ActivityIndicator, ScrollView } from 'react-native';
 import firebase from "../database/firebase";
 
 export default class Signup extends Component {
@@ -9,6 +9,7 @@ export default class Signup extends Component {
       displayName: "",
       email: "",
       password: "",
+      edad: "",
       isLoading: false,
     };
   }
@@ -36,8 +37,18 @@ export default class Signup extends Component {
             isLoading: false,
             displayName: this.state.displayName,
             email: this.state.email,
+            edad: this.state.edad,
             password: "",
           });
+          const dbh = firebase.firestore();
+
+              dbh.collection("users").doc(firebase.auth().currentUser.uid).set({
+                email: this.state.email,
+                name: this.state.displayName,
+                edad: this.state.edad,
+
+          })
+
           this.props.navigation.navigate("Login");
         })
         .catch((error) => {
@@ -58,7 +69,10 @@ export default class Signup extends Component {
         );
       }
         return (
+              
+            <ScrollView>
             <SafeAreaView style={styles.container}>
+
                 <Image source={require('../assets/LogoFIT_IT.png')}
                 style={styles.image}
                 />
@@ -70,6 +84,14 @@ export default class Signup extends Component {
                     placeholder="Nombre"
                     value={this.state.displayName}
                     onChangeText={(val) => this.updateInputVal(val, "displayName")}
+                    />
+                    <TextInput
+                    style={styles.inputStyle}
+                    placeholder="edad"
+                    keyboardType = 'numeric'
+                    onChangeText={(val) => this.updateInputVal(val, "edad")}
+                    value={this.state.edad}
+                    maxLength={2}
                     />
                     <TextInput
                     style={styles.inputStyle}
@@ -96,6 +118,7 @@ export default class Signup extends Component {
                     />
             
             </SafeAreaView>
+                  </ScrollView>
             
         )
     }
