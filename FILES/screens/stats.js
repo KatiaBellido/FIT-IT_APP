@@ -7,9 +7,9 @@ import firebase from '../database/firebase';
 
 
 // import { HeaderMenu } from "./HeaderMenu";
-const StatsPie = () => {
-
-    return <ProgressCircle style={{ height: 150,width:150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={0.7} progressColor={'#219EBC'} strokeWidth={20} backgroundColor={'rgb(105, 109, 125,0.1)'}/>
+const StatsPie = (props) => {
+    //console.log(props.tipo);
+    return <ProgressCircle style={{ height: 150,width:150, marginTop: 20, marginHorizontal: 16, flex:1}} progress={props.tipo} progressColor={'#219EBC'} strokeWidth={20} backgroundColor={'rgb(105, 109, 125,0.1)'}/>
 }
 const StatsBar = () => {
     const data = [
@@ -60,6 +60,8 @@ export default class Statistics extends Component{
         this.state = { 
           uid: firebase.auth().currentUser.uid,
           calorias: 0.7,
+          meditacion: 0.9,
+          ejercicio: 0.4
         }
     }
     render(){
@@ -77,15 +79,15 @@ export default class Statistics extends Component{
                                 <Text style={ styles.Title}>
                                     Calorías (al día)
                                 </Text>
-                                <StatsPie/>
+                                <StatsPie tipo={this.state.calorias}/>
                                 <Text style={ styles.Title}>
                                     Ejercicio (al día)
                                 </Text>
-                                <StatsPie/>
+                                <StatsPie tipo={this.state.ejercicio}/>
                                 <Text style={ styles.Title}>
                                     Meditación (al día)
                                 </Text>
-                                <StatsPie/>
+                                <StatsPie tipo={this.state.meditacion}/>
                             </ScrollView>
                         </View>
                         <View style={styles.divider}/>

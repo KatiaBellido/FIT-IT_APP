@@ -12,6 +12,7 @@ const ingredientes = [
     
 ];
 const _submit=(props, data)=>{
+    console.log(data.uid);
     console.log(Object.values(data));
     const docBD = data.uid+"_"+data.receta ;
     console.log(docBD);

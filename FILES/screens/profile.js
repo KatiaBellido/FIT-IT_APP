@@ -21,14 +21,25 @@ export default class Profile extends Component{
         })
         .catch(error => this.setState({ errorMessage: error.message }))
       } 
-        
-    // }
-    render(){
-        this.state = { 
-            displayName: firebase.auth().currentUser.displayName,
-            uid: firebase.auth().currentUser.uid,
-            email: firebase.auth().currentUser.email
-          } 
+      
+      prueba = () => {
+            const dbh = firebase.firestore();
+              var nombre;
+            dbh.collection('users').doc(firebase.auth().currentUser.uid).get().then(doc => {
+                console.log(doc.data().name);
+                 nombre = doc.data().name;
+            });
+          return nombre;
+      }
+      // }
+      render(){
+          this.state = { 
+              displayName: firebase.auth().currentUser.displayName,
+              uid: firebase.auth().currentUser.uid,
+              email: firebase.auth().currentUser.email
+            } 
+            
+
         const{navigate}=this.props.navigation;
         return (
             <View style={styles.container}>

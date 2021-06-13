@@ -51,6 +51,11 @@ export default class Login extends Component {
                 email: "",
                 password: "",
               });
+              /* const dbh = firebase.firestore();
+
+              dbh.collection("users").doc(firebase.auth().currentUser.uid).set({
+                email: this.state.email,
+              }) */
               this.props.navigation.navigate("Profile");
             })
             .catch((error) => {
