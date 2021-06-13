@@ -5,23 +5,34 @@ import firebase from '../database/firebase';
 import { Fontisto } from '@expo/vector-icons'; 
 
 import { HeaderMenu } from "./HeaderMenu";
+import { get } from 'react-native/Libraries/Utilities/PixelRatio';
 const db=firebase.firestore().collection("users");
 
-export default class Profile extends Component{
-    // static navigationOptions={
-    //     title:"First page",
-    //     headerTitle:()=><Header  title="Rutinas"/>
-    constructor() {
-        super();
-        this.state = { 
-          uid: ''
-        }
+async function getData() {
+    const dbRef = db.doc(firebase.auth().currentUser.uid);
+    const doc = await dbRef.get();
+    if (!doc.exists) {
+        console.log('No such document!');
+      } else {
+        return doc.data();
       }
+}
+
+export default function Profile({ navigation: { navigate } } ) {
+
+    const [user, setUser] = useState({});
+
+    
+    getData().then(data => {
+        setUser(data);
+    });
+
+    
       signOut = () => {
         firebase.auth().signOut().then(() => {
-          this.props.navigation.navigate('Login')
+          navigate('Login')
         })
-        .catch(error => this.setState({ errorMessage: error.message }))
+        .catch(error => Alert(error.message ))
       } 
       
       prueba = () => {
@@ -33,35 +44,7 @@ export default class Profile extends Component{
             });
           return nombre;
       }
-      
-      
-      // }
-      render(){
-          this.state = { 
-              displayName: getData().then((data) => { return data; }),
-              uid: firebase.auth().currentUser.uid,
-              email: firebase.auth().currentUser.email,
-            }
-            // const fetch=async()=>{
-                //     const response=firebase.firestore().collection("users");
-                //     const data=await (await response.doc(this.state.uid).get()).data;
-                //     //console.log(data);
-                // }
                 
-                async function getData() {
-                    const dbRef=db.doc(this.state.uid);
-                    const doc=await dbRef.get();
-                    const user= await doc.data();
-                    //CON ESTA FUNCION SE LOGRAN IMPRIMIR YA EL OBJETO... 
-                    //LO QUE SIGUE ES GUARDARLO TAL Y COMO LO HACEMOS EN LA VARIABLE STATE PARA PODER USARLA MAS ADELANTE
-                    //USER ES UN OBJETO AL CUAL SE LE PUEDE SACAR LOS COMPONENTES COMO DICCIONARIO
-                    return user.name;
-                }
-            //this.setState({displayName: getData().then((data) => { return data; })})
-                
-    
-
-        const{navigate}=this.props.navigation;
         return (
             <View style={styles.container}>
                 {/* <HeaderMenu/> */}
@@ -72,10 +55,10 @@ export default class Profile extends Component{
                             <Fontisto name="user-secret" size={60} color="black"/>
                             <View style={styles.datosX}>
                                 <Text style={ styles.Title}>
-                                {this.state.displayName}
+                                {user.name}
                                 </Text>
                                 <Text style={ styles.Title}>
-                                {this.state.email}
+                                {user.edad}
                                 </Text>
                             </View>
                         </View>
@@ -87,7 +70,7 @@ export default class Profile extends Component{
                             Cardio
                         </Text>
                         <TouchableOpacity style={ styles.boton}
-                            onPress={() =>this.props.navigation.navigate("Stats")}>
+                            onPress={() => navigate("Stats")}>
                             <Text style={ styles.Title}>
                                 Estadísticas
                             </Text>
@@ -98,13 +81,13 @@ export default class Profile extends Component{
                     <Button
                     color="#3740FE"
                     title="Cerrar Sesión"
-                    onPress={() => this.signOut()}
+                    onPress={() => signOut()}
                     />
                 </SafeAreaView>
             </View>
         );
     }
-}
+
 
 const styles = StyleSheet.create({
     container: {
