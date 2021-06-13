@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component } from 'react';
+import {Component, useState} from 'react';
 import { StyleSheet, Text, View, ScrollView,Button, Alert, ActivityIndicator } from 'react-native';
 import { StackedBarChart, ProgressCircle, XAxis } from 'react-native-svg-charts';
 import * as scale from 'd3-scale';
@@ -54,17 +54,34 @@ const StatsBar = () => {
     )
 }  
 
-export default class Statistics extends Component{
-    constructor() {
-        super();
-        this.state = { 
-          uid: firebase.auth().currentUser.uid,
-          calorias: 0.7,
-          meditacion: 0.9,
-          ejercicio: 0.4
-        }
-    }
-    render(){
+const db=firebase.firestore().collection("users");
+
+async function getData() {
+    const dbRef = db.doc(firebase.auth().currentUser.uid);
+    const doc = await dbRef.get();
+    if (!doc.exists) {
+        console.log('No such document!');
+      } else {
+        return doc.data();
+      }
+}
+
+export default function Statistics({ navigation: { navigate } }){
+   
+        const [user, setUser] = useState({});
+        const [calorias, setCalorias] = useState(0);
+        const [ejercicio, setEjercicio] = useState(0);
+        const [meditacion, setMeditacion] = useState(0);
+        getData().then(data => {
+            setUser(data);
+            var cal = parseInt(user.edad)/22.0;
+            var ejercicio = parseInt(user.edad)/25.0;
+            var meditacion = parseInt(user.edad)/56.0;
+            setCalorias(cal);
+            setEjercicio(ejercicio);
+            setMeditacion(meditacion);
+        });
+        
         return (
             <View style={styles.container}> 
                 {/* <HeaderMenu/> */}
@@ -79,15 +96,15 @@ export default class Statistics extends Component{
                                 <Text style={ styles.Title}>
                                     Calorías (al día)
                                 </Text>
-                                <StatsPie tipo={this.state.calorias}/>
+                                <StatsPie tipo={calorias}/>
                                 <Text style={ styles.Title}>
                                     Ejercicio (al día)
                                 </Text>
-                                <StatsPie tipo={this.state.ejercicio}/>
+                                <StatsPie tipo={ejercicio}/>
                                 <Text style={ styles.Title}>
                                     Meditación (al día)
                                 </Text>
-                                <StatsPie tipo={this.state.meditacion}/>
+                                <StatsPie tipo={meditacion}/>
                             </ScrollView>
                         </View>
                         <View style={styles.divider}/>
@@ -112,7 +129,7 @@ export default class Statistics extends Component{
                 </View>
             </View>
         );
-    }
+    
 }
 
 const styles = StyleSheet.create({
