@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
-import {View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity} from 'react-native';
-import {Card, CardItem} from 'native-base';
-import { Ionicons } from '@expo/vector-icons'; 
+import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity } from 'react-native';
+import { Card, CardItem } from 'native-base';
+import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import firebase from '../database/firebase';
+const db = firebase.firestore().collection("users");
+
+
 
 const listaRutina = [
     {
@@ -50,26 +54,55 @@ const listaRutina = [
         fecha: "03/05/2021"
     }
 ];
+//const [isLoaded,setLoaded]=useState({Name:"NULL",Intensidad:"NULL",Fecha:"10/20/11"})
+export default function Rutinas({ navigation: { navigate } }) {
+    const [user, setUser] = useState({});
+    const [isLoaded, setLoaded] = useState(false);
+    const [rutinas, setRutinas] = useState([{ Nombre: "NULL", Intensidad: "NULL", Fecha: "NULL" }]);
+    useEffect(() => {
+        const fetch= async()=> {
+            try {
+                const dbRef = db.doc(firebase.auth().currentUser.uid);
+                const doc = await dbRef.get();
+                if (!doc.exists) {
+                    console.log('No such document!');
+                } else {
+                    setUser(doc.data());
+                    setRutinas(doc.data().rutinas)
+                }
+        
+            }
+            catch (error) {
+                //por el momento no sirve pero es por si  hay algun error
+                console.log(error);
+            }
+            console.log("ACABE EL FETCH");
+        }
+        if(isLoaded==false){
+            fetch();
+            setLoaded(!isLoaded);
 
-export default class Rutinas extends Component{
-    render(){
-        return(
-            <>
+        }
+    });
+
+    return (
+        <>
             <View>
                 <ScrollView>
-                <SafeAreaView>
+                    <SafeAreaView>
                         <View style={styles.rutina}>
-                            {listaRutina.map((listaRutina, index) => {
-                                return(
+
+                            {rutinas.map((listaRutina, index) => {
+                                return (
                                     <Pressable onPress={() => Alert.alert('Ver rutina')}>
                                         <View style={styles.card}>
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>
-                                                    <Text style={styles.titulo}>{listaRutina.titulo}</Text>
-                                                    <Text style={styles.intense}>{listaRutina.intensidad}</Text>
-                                                    <Text style={styles.date}>{listaRutina.fecha}</Text>
+                                                    <Text style={styles.titulo}>{listaRutina.Nombre}</Text>
+                                                    <Text style={styles.intense}>{listaRutina.Intensidad}</Text>
+                                                    <Text style={styles.date}>{listaRutina.Fecha}</Text>
                                                 </View>
-                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')}/>
+                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')} />
                                             </View>
                                             {/* <View style={styles.divider}/> */}
                                         </View>
@@ -77,16 +110,16 @@ export default class Rutinas extends Component{
                                 )
                             })}
                         </View>
-                </SafeAreaView>
+                    </SafeAreaView>
                 </ScrollView>
             </View>
             <TouchableOpacity style={styles.botonFlot} onPress={() => Alert.alert('Agregar rutina')}>
                 <Entypo name="plus" size={36} color="#023047" />
             </TouchableOpacity>
-            </>
-        );
-    }
+        </>
+    );
 }
+
 
 const styles = StyleSheet.create({
     containerSafe: {
@@ -95,19 +128,19 @@ const styles = StyleSheet.create({
     header: {
         marginTop: 50,
         flexDirection: "row",
-        alignItems:"center",
+        alignItems: "center",
         backgroundColor: '#8ECAE6',
-        padding:10
+        padding: 10
     },
-    image:{
-        width: 60, 
-        height:60,
+    image: {
+        width: 60,
+        height: 60,
     },
-    text:{
-        fontSize:16,
+    text: {
+        fontSize: 16,
         color: "white",
-        flex:1.7,
-        textAlign:"center"
+        flex: 1.7,
+        textAlign: "center"
     },
     titulo: {
         fontSize: 28,
