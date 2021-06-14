@@ -1,138 +1,140 @@
-import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
-export default class Platillos extends Component {
-  render() {
+import React, { Component,useState,useEffect } from 'react';
+//import {Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity} from 'native-base';
+import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity } from 'react-native';
+import firebase from '../../database/firebase';
+import { Entypo } from '@expo/vector-icons';
+import { Thumbnail } from 'native-base';
+export default function Platillos ({ navigation: { navigate } } ) {
+  const [user, setUser] = useState({});
+    const [isLoaded, setLoaded] = useState(false);
+    const [recetas, setRecetas] = useState([{ categoria: "NULL", imagen: "NULL", nombre: "NULL" }]);
+    const db = firebase.firestore().collection("Recetas");
+    useEffect(() => {
+        const fetch= async()=> {
+            try {
+               //const dbRef = db.doc(firebase.auth().currentUser.uid);
+                const docs = await db.where("categoria","==","PLATILLOS").get();
+                let allRecteas=[];
+                docs.forEach((doc)=>{
+                  allRecteas.push(doc.data())
+                });
+                setRecetas(allRecteas);
+        
+            }
+            catch (error) {
+                //por el momento no sirve pero es por si  hay algun error
+                console.log(error);
+            }
+            console.log("ACABE EL FETCH");
+            
+        }
+        if(isLoaded==false){
+            fetch();
+            setLoaded(!isLoaded);
+            
+
+        }
+    });
+    //console.log(recetas);
+
+
     return (
-        <Content>
-          <List>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/4b87cf/garbanzos/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Garbanzos tostados al pimentón</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/ef6f25/albondigas/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Tortitas de calabaza y avena</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/a0fd80/tortilla/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Tortilla de claras con berenjena</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i0.wp.com/chingaledarling.com/wp-content/uploads/2019/06/Captura-de-pantalla-2019-06-22-a-las-1.45.14-p.m..png?w=592&ssl=1' }} />
-              </Left>
-              <Body>
-                <Text>Tacos de Pollo</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i0.wp.com/chingaledarling.com/wp-content/uploads/2019/06/Captura-de-pantalla-2019-06-22-a-las-1.47.04-p.m..png?w=556&ssl=1' }} />
-              </Left>
-              <Body>
-                <Text>Chilaquiles Fit</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i2.wp.com/chingaledarling.com/wp-content/uploads/2019/06/Captura-de-pantalla-2019-06-22-a-las-1.51.04-p.m..png?w=589&ssl=1' }} />
-              </Left>
-              <Body>
-                <Text>Chiles Rellenos Fit</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/da59e0/1366_2000-7-/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Hummus con verduras</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/05870c/2560_3000-2-/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Ensalada de garbanzos al balsámico</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://i.blogs.es/6e8694/ensalada_lentejas_rec/1366_2000.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Ensalada de lentejas</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </List>
-        </Content>
+      <ScrollView>
+                    <SafeAreaView>
+                    
+                        <View style={styles.rutina}>
+                            {recetas.map((listaRutina, index) => {
+                                return (
+                                    <Pressable onPress={() => Alert.alert('Ver rutina')}>
+                                        <View style={styles.card}>
+                                            <View style={styles.rutinaCompleta} key={index}>
+                                                <View style={styles.rutinaInfo}>
+                                                
+                <Thumbnail square source={{uri:listaRutina.imagen}}/>
+              
+                                                    <Text style={styles.titulo}>{listaRutina.nombre}</Text>
+                                                    
+                                                </View>
+                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')} />
+                                            </View>
+                                            {/* <View style={styles.divider}/> */}
+                                        </View>
+                                    </Pressable>
+                                )
+                            })}
+      </View>
+      </SafeAreaView>
+      </ScrollView>
+        
     );
   }
-}
+
+  const styles = StyleSheet.create({
+    containerSafe: {
+        backgroundColor: '#8ECAE6',
+    },
+    header: {
+        marginTop: 50,
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: '#8ECAE6',
+        padding: 10
+    },
+    image: {
+        width: 60,
+        height: 60,
+    },
+    text: {
+        fontSize: 16,
+        color: "white",
+        flex: 1.7,
+        textAlign: "center"
+    },
+    titulo: {
+        fontSize: 15,
+        fontWeight: 'bold'
+    },
+    intense: {
+        fontSize: 16
+    },
+    date: {
+        fontSize: 12,
+        opacity: 0.6
+    },
+    rutina: {
+        margin: 20
+    },
+    card: {
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 1,
+        marginBottom: 16
+    },
+    rutinaCompleta: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 16
+    },
+    rutinaInfo: {
+        flex: 1,
+        marginLeft: 12
+    },
+    divider: {
+        borderBottomColor: '#808080',
+        borderBottomWidth: 1,
+        width: '95%',
+        marginLeft: 12,
+        marginBottom: 8,
+    },
+    botonFlot: {
+        backgroundColor: '#8ECAE6',
+        width: 55,
+        height: 55,
+        position: 'absolute',
+        bottom: 45,
+        right: 10,
+        borderRadius: 100,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});

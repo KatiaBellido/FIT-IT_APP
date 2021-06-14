@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs, Left, Center, Body, Title, Right} from 'native-base';
-import { StyleSheet, Text, View, Switch, Image, TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, TouchableOpacity, Image, Text, SafeAreaView, ScrollView, Pressable, Button } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import Tab1 from './Tabs/platillos';
 import Tab2 from './Tabs/Bebidas';
@@ -14,12 +14,12 @@ export default class TabsExample extends Component {
           <Tab heading="Platillos">
             <Tab1 navigation={this.props.navigation}/>
           </Tab>
-          <Tab heading="Bebidas">
+          {/* <Tab heading="Bebidas">
             <Tab2 navigation={this.props.navigation}/>
           </Tab>
           <Tab heading="Postres">
             <Tab3 navigation={this.props.navigation}/>
-          </Tab>
+          </Tab> */}
         </Tabs>
       <TouchableOpacity style={styles.botonFlot} onPress={() => this.props.navigation.navigate("Aniadir")}>
         <Entypo name="plus" size={36} color="#023047" />

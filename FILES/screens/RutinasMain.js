@@ -5,6 +5,8 @@ import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Ale
 import { Card, CardItem } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+
+
 import firebase from '../database/firebase';
 const db = firebase.firestore().collection("users");
 
