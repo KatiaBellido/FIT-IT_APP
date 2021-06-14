@@ -10,19 +10,15 @@ export default function FullView ({navigation:navigate}){
             <View style={styles.container}>
                 <ScrollView>
                 <StatusBar barStyle="light-content" />
-                <ImageBackground source = {{uri:receta.imagen}} style={styles.recetaFondo}>
-                    <SafeAreaView>
-                        <View style={styles.menubar}>
+                <View style={styles.menubar}>
                             <View style={styles.back}>
-                                <AntDesign name="heart" size={24} color="#fff" style={styles.heart} onPress={() => Alert.alert('Me gusta')}/>
-                                <AntDesign name="sharealt" size={24} color="#fff" style={styles.share} onPress={() => Alert.alert('Compartir')}/>
+                            <Text style={styles.bold}> {receta.nombre} </Text>
                             </View>
                         </View>
+                <ImageBackground source = {{uri:receta.imagen}} style={styles.recetaFondo}>
+                    <SafeAreaView>
+                        
                         <View style={styles.mainReceta}>
-                            <Text style={styles.titulos}> </Text>
-                            <View style={styles.divider}/>
-                            <Text style={styles.sub}> Calorias por receta </Text>
-                            <Text style={styles.sub}> Grasa, Proteina, Carbs</Text>
                         </View>
                     </SafeAreaView>
                 </ImageBackground>
@@ -30,7 +26,7 @@ export default function FullView ({navigation:navigate}){
                     <Text style={styles.bold}> Ingredientes </Text>
                     <Text> {receta.ingredientes} </Text>
                     <View style={styles.instrucciones}>
-                        <Text style={styles.bold}> Instrucciones </Text>
+                        <Text style={styles.bold}> Preparacion </Text>
                         <Text>{receta.preparacion}</Text>
                 </View>
                 </View>
@@ -69,7 +65,8 @@ const styles = StyleSheet.create({
         paddingTop: 0,
         paddingRight: 32,
         marginTop: 200,
-        marginBottom: 32
+        marginBottom: 32,
+        flexDirection: 'row'
     },
     titulos: {
         fontSize: 32,

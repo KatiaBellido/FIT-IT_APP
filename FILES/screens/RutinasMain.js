@@ -79,6 +79,7 @@ export default function Rutinas({ navigation: { navigate } }) {
                 console.log(error);
             }
             console.log("ACABE EL FETCH");
+            
         }
         if(isLoaded==false){
             fetch();
@@ -86,7 +87,6 @@ export default function Rutinas({ navigation: { navigate } }) {
 
         }
     });
-
     return (
         <>
             <View>
@@ -96,7 +96,7 @@ export default function Rutinas({ navigation: { navigate } }) {
 
                             {rutinas.map((listaRutina, index) => {
                                 return (
-                                    <Pressable onPress={() => Alert.alert('Ver rutina')}>
+                                    <Pressable onPress={() => navigate("Ejercicios",{data:listaRutina.Ejercicios})}>
                                         <View style={styles.card}>
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>
