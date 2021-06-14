@@ -1,140 +1,140 @@
-import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
-export default class ListThumbnailExample extends Component {
-  render() {
+import React, { Component,useState,useEffect } from 'react';
+//import {Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity} from 'native-base';
+import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity } from 'react-native';
+import firebase from '../../database/firebase';
+import { Entypo } from '@expo/vector-icons';
+import { Thumbnail } from 'native-base';
+export default function ListThumbnailExample ({ navigation: { navigate } } ) {
+  const [user, setUser] = useState({});
+  const [isLoaded, setLoaded] = useState(false);
+  const [recetas, setRecetas] = useState([{ categoria: "NULL", imagen: "NULL", nombre: "NULL" }]);
+  const db = firebase.firestore().collection("Recetas");
+  useEffect(() => {
+      const fetch= async()=> {
+          try {
+             //const dbRef = db.doc(firebase.auth().currentUser.uid);
+              const docs = await db.where("categoria","==","BEBIDAS").get();
+              let allRecteas=[];
+              docs.forEach((doc)=>{
+                allRecteas.push(doc.data())
+              });
+              setRecetas(allRecteas);
+      
+          }
+          catch (error) {
+              //por el momento no sirve pero es por si  hay algun error
+              console.log(error);
+          }
+          console.log("ACABE EL FETCH");
+          
+      }
+      if(isLoaded==false){
+          fetch();
+          setLoaded(!isLoaded);
+          
+
+      }
+  });
+  //console.log(recetas);
+
+
     return (
-      <Container>
-        <Content>
-          <List>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://mejorconsalud.as.com/wp-content/uploads/2017/11/arandanos-yogur-500x281.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de arándanos y yogur</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://mejorconsalud.as.com/wp-content/uploads/2017/11/licuado-fresa-500x313.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de fresas, naranja y yogur</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://mejorconsalud.as.com/wp-content/uploads/2017/11/licuado-durazno-500x338.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de duraznos y leche de almendras</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://www.infobae.com/new-resizer/-Ix57FCBigR8hJBeDz4pdyMQkUg=/992x558/filters:format(jpg):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/12/29163631/detox-plan.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Smoothie de frutas</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://www.infobae.com/new-resizer/Rr0GhDwlTXeGyxNiapkzVt8ZhB0=/992x661/filters:format(jpg):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/29121900/Jugos-9.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Limonada de Frutos Rojos</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://www.infobae.com/new-resizer/LfRdK7dSeJlsjx86HLfuVmReyKQ=/992x661/filters:format(jpg):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/29122047/Jugos-16.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado Verde</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://www.infobae.com/new-resizer/kPoXC88ad3ojO9pLOgzuyseimwY=/992x558/filters:format(jpg):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/07/24144217/iStock-537522498.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de banana y leche de Almendras</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2016/07/jugodemelonymenta.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de melón y menta</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/beneficios_del_jugo_de_papaya_2.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Licuado de papaya y avena</Text>
-                <Text note numberOfLines={2}>Perfectas para Verano . .</Text>
-              </Body>
-              <Right>
-                <Button transparent onPress={()=>this.props.navigation.navigate("Full")}>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </List>
-        </Content>
-      </Container>
+      <ScrollView>
+                    <SafeAreaView>
+                    
+                        <View style={styles.rutina}>
+                            {recetas.map((listaRutina, index) => {
+                                return (
+                                    <Pressable onPress={() => Alert.alert('Ver Receta')}>
+                                        <View style={styles.card}>
+                                            <View style={styles.rutinaCompleta} key={index}>
+                                                <View style={styles.rutinaInfo}>
+                                                
+                <Thumbnail square source={{uri:listaRutina.imagen}}/>
+              
+                                                    <Text style={styles.titulo}>{listaRutina.nombre}</Text>
+                                                    
+                                                </View>
+                                                <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')} />
+                                            </View>
+                                            {/* <View style={styles.divider}/> */}
+                                        </View>
+                                    </Pressable>
+                                )
+                            })}
+      </View>
+      </SafeAreaView>
+      </ScrollView>
+        
     );
   }
-}
+
+  const styles = StyleSheet.create({
+    containerSafe: {
+        backgroundColor: '#8ECAE6',
+    },
+    header: {
+        marginTop: 50,
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: '#8ECAE6',
+        padding: 10
+    },
+    image: {
+        width: 60,
+        height: 60,
+    },
+    text: {
+        fontSize: 16,
+        color: "white",
+        flex: 1.7,
+        textAlign: "center"
+    },
+    titulo: {
+        fontSize: 15,
+        fontWeight: 'bold'
+    },
+    intense: {
+        fontSize: 16
+    },
+    date: {
+        fontSize: 12,
+        opacity: 0.6
+    },
+    rutina: {
+        margin: 20
+    },
+    card: {
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 1,
+        marginBottom: 16
+    },
+    rutinaCompleta: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 16
+    },
+    rutinaInfo: {
+        flex: 1,
+        marginLeft: 12
+    },
+    divider: {
+        borderBottomColor: '#808080',
+        borderBottomWidth: 1,
+        width: '95%',
+        marginLeft: 12,
+        marginBottom: 8,
+    },
+    botonFlot: {
+        backgroundColor: '#8ECAE6',
+        width: 55,
+        height: 55,
+        position: 'absolute',
+        bottom: 45,
+        right: 10,
+        borderRadius: 100,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});

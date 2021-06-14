@@ -45,7 +45,7 @@ export default function Platillos ({ navigation: { navigate } } ) {
                         <View style={styles.rutina}>
                             {recetas.map((listaRutina, index) => {
                                 return (
-                                    <Pressable onPress={() => Alert.alert('Ver rutina')}>
+                                    <Pressable onPress={() => Alert.alert('Ver Receta')}>
                                         <View style={styles.card}>
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>
