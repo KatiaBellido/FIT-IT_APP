@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 // Importar el paquete react-player de npm
-import ReactPlayer from 'react-player'
+import YoutubePlayer from "react-native-yt-player";
 
 export default class MeditAudios extends Component {
     render() {
@@ -10,9 +10,17 @@ export default class MeditAudios extends Component {
             <View style={styles.container}>
                 <View style={styles.container}>
                     <SafeAreaView style={styles.containerSafe}>
-                        <View style={styles.centered}>
                             {/* Utilizar el paquete instalado y pasarle el link del video */}
-                            <ReactPlayer url='https://www.youtube.com/watch?v=1eeqKYU_pDY' />
+                            <View style={{ paddingTop: 60 }}>
+                                <YoutubePlayer
+                                    loop
+                                    topBar={TopBar}
+                                    videoId="3oCC4NDgYrY"
+                                    autoPlay
+                                    onFullScreen={this.onFullScreen}
+                                    onStart={() => console.log("onStart")}
+                                    onEnd={() => alert("on End")}
+                                />
                     
                     {/* Versión anterior, con propósitos únicamente estéticos
                     <Image source={require('../assets/cover.jpeg')} style={styles.imageCover}></Image>
@@ -29,7 +37,7 @@ export default class MeditAudios extends Component {
                             onPress={() => Alert.alert('¿Seguro que quieres salir del audio?')}
                         />
                     </View>  */}
-                        </View>
+                    </View>
                     </SafeAreaView>
                 </View>
             </View>
