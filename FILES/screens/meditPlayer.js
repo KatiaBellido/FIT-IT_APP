@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+// Importar el paquete react-player de npm
+import ReactPlayer from 'react-player'
 
 export default class MeditAudios extends Component {
     render() {
@@ -8,6 +10,11 @@ export default class MeditAudios extends Component {
             <View style={styles.container}>
                 <View style={styles.container}>
                     <SafeAreaView style={styles.containerSafe}>
+                        <View style={styles.centered}>
+                            {/* Utilizar el paquete instalado y pasarle el link del video */}
+                            <ReactPlayer url='https://www.youtube.com/watch?v=1eeqKYU_pDY' />
+                    
+                    {/* Versión anterior, con propósitos únicamente estéticos
                     <Image source={require('../assets/cover.jpeg')} style={styles.imageCover}></Image>
                     <View style={styles.textBox}>
                         <Text style={styles.title}>
@@ -21,7 +28,8 @@ export default class MeditAudios extends Component {
                             color="#219EBC"
                             onPress={() => Alert.alert('¿Seguro que quieres salir del audio?')}
                         />
-                    </View>
+                    </View>  */}
+                        </View>
                     </SafeAreaView>
                 </View>
             </View>
@@ -80,5 +88,11 @@ const styles = StyleSheet.create({
 
     espacio: {
         height: 20,
+    },
+
+    centered: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     }
 });

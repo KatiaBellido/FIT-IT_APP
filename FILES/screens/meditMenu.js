@@ -4,6 +4,7 @@ import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAr
 export default class Meditation extends Component {
     render() {
         return (
+            // Crear contenedores y espacio para colocar el título y descripción
                 <SafeAreaView style={styles.containerSafe}>
                 <ScrollView>
                 <View style={styles.textBox}>
@@ -11,6 +12,7 @@ export default class Meditation extends Component {
                         Meditaciones guiadas para cualquier momento y ocasión
                     </Text>
                 </View>
+                {/* Al dar click a la imagen, te llevará al reproductor de audio */}
                     <TouchableOpacity style={styles.image} onPress={()=>this.props.navigation.navigate("Reproductor")}>
                         <Image source={require('../assets/med1.jpg')} style={{height:250,width:250, position:"absolute"}}></Image>
                     </TouchableOpacity>
@@ -54,6 +56,7 @@ export default class Meditation extends Component {
     }
 }
 
+// Estilos utilizados en esta pantalla
 const styles = StyleSheet.create({
     title: {
         padding: 10,
