@@ -47,6 +47,15 @@ export default function Profile({ navigation: { navigate } } ) {
         .catch(error => Alert(error.message ))
       } 
       
+      prueba = () => {
+            const dbh = firebase.firestore();
+              var nombre;
+                dbh.collection('users').doc(firebase.auth().currentUser.uid).get().then(doc => {
+                //console.log(doc.data().name);
+                 nombre = doc.data().name;
+            });
+          return nombre;
+      }
                 
         return (
             <View style={styles.container}>
