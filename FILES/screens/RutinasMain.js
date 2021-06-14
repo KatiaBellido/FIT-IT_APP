@@ -70,7 +70,9 @@ export default function Rutinas({ navigation: { navigate } }) {
                     console.log('No such document!');
                 } else {
                     setUser(doc.data());
-                    setRutinas(doc.data().rutinas)
+                    if(doc.data().rutinas!=undefined){
+                        setRutinas(doc.data().rutinas)
+                    }
                 }
         
             }
