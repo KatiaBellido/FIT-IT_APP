@@ -69,18 +69,24 @@ async function getData() {
 export default function Statistics({ navigation: { navigate } }){
    
         const [user, setUser] = useState({});
+        const [isMade,setMade]=useState(false);
         const [calorias, setCalorias] = useState(0);
         const [ejercicio, setEjercicio] = useState(0);
         const [meditacion, setMeditacion] = useState(0);
-        getData().then(data => {
-            setUser(data);
-            var cal = parseInt(user.edad)/22.0;
-            var ejercicio = parseInt(user.edad)/25.0;
-            var meditacion = parseInt(user.edad)/56.0;
-            setCalorias(cal);
-            setEjercicio(ejercicio);
-            setMeditacion(meditacion);
-        });
+
+        if(isMade == false){
+            console.log("prueba");
+            getData().then(data => {
+                setUser(data);
+                var cal = parseInt(user.edad)/22.0;
+                var ejercicio = parseInt(user.edad)/25.0;
+                var meditacion = parseInt(user.edad)/56.0;
+                setMade(true);
+                setCalorias(cal);
+                setEjercicio(ejercicio);
+                setMeditacion(meditacion);
+            });
+        }
         
         return (
             <View style={styles.container}> 
