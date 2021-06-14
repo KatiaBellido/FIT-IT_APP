@@ -31,11 +31,11 @@ export default class App extends Component {
     //<Meditation/>
     //<Meditaudios/>
     //<Statistics/>
-    //<Navigator/>
+    <Navigator/>
     //<RecetasAdd/>
     //<RutinaAdd/>
     //<Ejercicios/>
-    <EjercicioAdd/>
+    //<EjercicioAdd/>
    );
 
 }

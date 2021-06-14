@@ -5,14 +5,8 @@ import { HeaderMenu } from "./HeaderMenu";
 import { Entypo } from '@expo/vector-icons';
 import firebase from '../database/firebase';
 
-// const _submit=(props)=>{
-//     alert("Agregada")
-    
-//     props.navigation.navigate("Recetas")
-// }
-
-export default function RutinaAdd (){
-    const [dia, setDia] = useState(0);
+export default function RutinaAdd ({ navigation: { navigate } }){
+    const [selectedValue, setSelectedValue] = useState("Lunes");
 
     return(
             <>
@@ -28,9 +22,9 @@ export default function RutinaAdd (){
                     <View style={styles.divider}/>
                     <View style={styles.selector}>
                         <Picker
-                            selectedValue={dia}
+                            selectedValue={selectedValue}
                             style={styles.picker}
-                            onValueChange={(itemValue, itemIndex) => this.setState({dia: itemValue})}
+                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                         >
                             <Picker.Item label="Lunes" value="lunes" />
                             <Picker.Item label="Martes" value="martes" />
@@ -43,7 +37,7 @@ export default function RutinaAdd (){
                     </View>
                     <View style={styles.divider}/>
                 </View>
-                <Pressable onPress={() => Alert.alert('Agregar ejercicio')}>
+                <Pressable onPress={() => navigate('Ejercicio')}>
                     <View style={styles.card}>
                         <View style={styles.rutinaCompleta}>
                             <View style={styles.rutinaInfo}>
@@ -65,7 +59,7 @@ export default function RutinaAdd (){
                     <Button
                         title="Guardar Rutina"
                         color="#023047"
-                        onPress={()=>_submit(this.props)}
+                        onPress={() => navigate('Rutinas')}
                     />
                 </View>
             </SafeAreaView>

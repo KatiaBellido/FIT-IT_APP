@@ -11,12 +11,7 @@ const ingredientes = [
     }
 ];
 
-const _submit=(props)=>{
-    alert("Agregada")
-    
-    props.navigation.navigate("Recetas")
-}
-export default function RecetasAdd (){
+export default function RecetasAdd ({ navigation: { navigate } }){
 
     return(
         <>
@@ -60,7 +55,7 @@ export default function RecetasAdd (){
                     <Button
                         title="Agregar Receta"
                         color="#023047"
-                        onPress={()=>_submit(this.props)}
+                        onPress={()=>navigate('Recetas')}
                     />
                 </View>
             </SafeAreaView>

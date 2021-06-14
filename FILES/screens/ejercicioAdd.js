@@ -5,32 +5,19 @@ import { HeaderMenu } from "./HeaderMenu";
 import { Entypo } from '@expo/vector-icons';
 import firebase from '../database/firebase';
 
-// const _submit=(props)=>{
-//     alert("Agregada")
-    
-//     props.navigation.navigate("Recetas")
-// }
-
-export default function EjercicioAdd (){
-    const [parte, setParte] = useState(0);
+export default function EjercicioAdd ({ navigation: { navigate } }){
+    const [selectedValue, setSelectedValue] = useState("Brazo");
 
     return(
         <>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titulos}>Nuevo Ejercicio</Text>
-                <Pressable onPress={() => Alert.alert('Agregar ejercicio')}>
-                    <View style={styles.card}>
-                        <View style={styles.rutinaCompleta}>
-                            <View style={styles.rutinaInfo}>
-                                <Text style={styles.titulo}>Agregar ejercicio</Text>
-                            </View>
-                            <View style={styles.icon}>
-                                <Entypo name="chevron-thin-right" size={16} color="black"/>
-                            </View>
-                        </View>
-                        <View style={styles.divider}/>
-                    </View>
-                </Pressable>
+                <View style={styles.card}>
+                    <TextInput
+                        style={styles.inputStyle}
+                        placeholder="Título"
+                    />
+                </View>
                 <Pressable onPress={() => Alert.alert('Agregar ejercicio')}>
                     <View style={styles.card}>
                         <View style={styles.rutinaCompleta}>
@@ -47,9 +34,9 @@ export default function EjercicioAdd (){
                 <View style={styles.card}>
                     <View style={styles.selector}>
                         <Picker
-                            selectedValue={parte}
+                            selectedValue={selectedValue}
                             style={styles.picker}
-                            onValueChange={(itemValue, itemIndex) => this.setState({parte: itemValue})}
+                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                         >
                             <Picker.Item label="Brazo" value="brazo" />
                             <Picker.Item label="Pierna" value="pierna" />
@@ -70,7 +57,7 @@ export default function EjercicioAdd (){
                     <Button
                         title="Guardar Ejercicio"
                         color="#023047"
-                        onPress={()=>_submit(this.props)}
+                        onPress={()=>navigate('Rutinas')}
                     />
                 </View>
             </SafeAreaView>
@@ -147,5 +134,12 @@ const styles = StyleSheet.create({
     },
     icon: {
         marginRight: 4
+    },
+    inputStyle: {
+        width: "90%",
+        margin: 16,
+        alignSelf: "center",
+        borderColor: "#696D7D",
+        borderBottomWidth: 1
     }
 });

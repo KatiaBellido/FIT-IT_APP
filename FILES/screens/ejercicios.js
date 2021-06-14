@@ -65,7 +65,8 @@ const listaRutina = [
     }
 ];
 
-export default function Rutinas (){
+export default function Rutinas ({ navigation: { navigate } }){
+    
     return(
         <>
             <View>
@@ -95,7 +96,7 @@ export default function Rutinas (){
                 </SafeAreaView>
                 </ScrollView>
             </View>
-            <TouchableOpacity style={styles.botonFlot} onPress={() => Alert.alert('Agregar rutina')}>
+            <TouchableOpacity style={styles.botonFlot} onPress={() => navigate('EjercicioAdd')}>
                 <Entypo name="plus" size={36} color="#023047" />
             </TouchableOpacity>
         </>
