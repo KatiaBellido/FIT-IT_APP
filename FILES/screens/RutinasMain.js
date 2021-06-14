@@ -59,7 +59,7 @@ export default function Rutinas({ navigation: { navigate } }){
                         <View style={styles.rutina}>
                             {listaRutina.map((listaRutina, index) => {
                                 return(
-                                    <Pressable onPress={() => Alert.alert('Ver rutina')}>
+                                    <Pressable onPress={() => navigate('Ejercicio')}>
                                         <View style={styles.card}>
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>

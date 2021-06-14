@@ -75,7 +75,7 @@ export default function Rutinas ({ navigation: { navigate } }){
                         <View style={styles.rutina}>
                             {listaRutina.map((listaRutina, index) => {
                                 return(
-                                    <Pressable onPress={() => Alert.alert('Ver rutina')}>
+                                    <Pressable onPress={() => navigate('EjercicioAdd')}>
                                         <View style={styles.card}>
                                             <View style={styles.rutinaCompleta} key={index}>
                                                 <View style={styles.rutinaInfo}>
@@ -84,7 +84,7 @@ export default function Rutinas ({ navigation: { navigate } }){
                                                     <Text style={styles.extra}>{listaRutina.repos} · {listaRutina.peso}</Text>
                                                 </View>
                                                 <View style={styles.icon}>
-                                                    <Entypo name="chevron-thin-right" size={16} color="black" />
+                                                    <Entypo name="chevron-thin-right" size={16} color="black"/>
                                                 </View>
                                             </View>
                                             <View style={styles.divider}/>
