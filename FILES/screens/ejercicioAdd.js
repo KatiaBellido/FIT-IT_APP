@@ -3,6 +3,7 @@ import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAr
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
 import { Entypo } from '@expo/vector-icons';
+import firebase from '../database/firebase';
 
 // const _submit=(props)=>{
 //     alert("Agregada")
@@ -10,14 +11,11 @@ import { Entypo } from '@expo/vector-icons';
 //     props.navigation.navigate("Recetas")
 // }
 
-export default class EjercicioAdd extends Component{
-    state = {
-        dia: 'lunes'
-    }
+export default function EjercicioAdd (){
+    const [parte, setParte] = useState(0);
 
-    render(){
-        return(
-            <>
+    return(
+        <>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titulos}>Nuevo Ejercicio</Text>
                 <Pressable onPress={() => Alert.alert('Agregar ejercicio')}>
@@ -49,9 +47,9 @@ export default class EjercicioAdd extends Component{
                 <View style={styles.card}>
                     <View style={styles.selector}>
                         <Picker
-                            selectedValue={this.state.dia}
+                            selectedValue={parte}
                             style={styles.picker}
-                            onValueChange={(itemValue, itemIndex) => this.setState({dia: itemValue})}
+                            onValueChange={(itemValue, itemIndex) => this.setState({parte: itemValue})}
                         >
                             <Picker.Item label="Brazo" value="brazo" />
                             <Picker.Item label="Pierna" value="pierna" />
@@ -76,9 +74,8 @@ export default class EjercicioAdd extends Component{
                     />
                 </View>
             </SafeAreaView>
-            </>
-        );
-    }
+        </>
+    );
 }
 
 const styles = StyleSheet.create({

@@ -1,8 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect} from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, FlatList, Picker, Pressable} from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
 import { Entypo } from '@expo/vector-icons';
+import firebase from '../database/firebase';
 
 // const _submit=(props)=>{
 //     alert("Agregada")
@@ -10,13 +11,10 @@ import { Entypo } from '@expo/vector-icons';
 //     props.navigation.navigate("Recetas")
 // }
 
-export default class RutinaAdd extends Component{
-    state = {
-        dia: 'lunes'
-    }
+export default function RutinaAdd (){
+    const [dia, setDia] = useState(0);
 
-    render(){
-        return(
+    return(
             <>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titulos}>Nueva Rutina</Text>
@@ -30,7 +28,7 @@ export default class RutinaAdd extends Component{
                     <View style={styles.divider}/>
                     <View style={styles.selector}>
                         <Picker
-                            selectedValue={this.state.dia}
+                            selectedValue={dia}
                             style={styles.picker}
                             onValueChange={(itemValue, itemIndex) => this.setState({dia: itemValue})}
                         >
@@ -72,8 +70,7 @@ export default class RutinaAdd extends Component{
                 </View>
             </SafeAreaView>
             </>
-        );
-    }
+    );
 }
 
 const styles = StyleSheet.create({

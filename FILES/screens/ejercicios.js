@@ -4,6 +4,7 @@ import { HeaderMenu } from "./HeaderMenu";
 import {View, StyleSheet, Image, Text, SafeAreaView, ScrollView, Pressable, Alert, Button, TouchableOpacity} from 'react-native';
 import {Card, CardItem} from 'native-base';
 import { Entypo } from '@expo/vector-icons';
+import firebase from '../database/firebase';
 
 const listaRutina = [
     {
@@ -64,10 +65,9 @@ const listaRutina = [
     }
 ];
 
-export default class Rutinas extends Component{
-    render(){
-        return(
-            <>
+export default function Rutinas (){
+    return(
+        <>
             <View>
                 <ScrollView>
                 <SafeAreaView>
@@ -98,9 +98,8 @@ export default class Rutinas extends Component{
             <TouchableOpacity style={styles.botonFlot} onPress={() => Alert.alert('Agregar rutina')}>
                 <Entypo name="plus" size={36} color="#023047" />
             </TouchableOpacity>
-            </>
-        );
-    }
+        </>
+    );
 }
 
 const styles = StyleSheet.create({

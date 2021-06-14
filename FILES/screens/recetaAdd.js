@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Button, View, Switch, Image, TextInput, Alert, SafeAreaView, FlatList } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HeaderMenu } from "./HeaderMenu";
+import firebase from '../database/firebase';
 
 const ingredientes = [
     {
@@ -9,17 +10,16 @@ const ingredientes = [
         name: "harina"
     }
 ];
+
 const _submit=(props)=>{
     alert("Agregada")
     
     props.navigation.navigate("Recetas")
 }
-export default class RecetasAdd extends Component{
+export default function RecetasAdd (){
 
-    render(){
-
-        return(
-            <>
+    return(
+        <>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.titulos}>Nueva Receta</Text>
                 <View style={styles.card}>
@@ -64,9 +64,8 @@ export default class RecetasAdd extends Component{
                     />
                 </View>
             </SafeAreaView>
-            </>
-        );
-    }
+        </>
+    );
 }
 
 const styles = StyleSheet.create({
