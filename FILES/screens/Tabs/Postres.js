@@ -47,16 +47,16 @@ export default function ListThumbnailExample ({ navigation: { navigate } } ) {
       <SafeAreaView>
       
           <View style={styles.rutina}>
-              {recetas.map((listaRutina, index) => {
+              {recetas.map((listaRecetas, index) => {
                   return (
-                      <Pressable onPress={() => Alert.alert('Ver Receta')}>
+                      <Pressable onPress={() => navigate("Full",{data:listaRecetas})}>
                           <View style={styles.card}>
                               <View style={styles.rutinaCompleta} key={index}>
                                   <View style={styles.rutinaInfo}>
                                   
-  <Thumbnail square source={{uri:listaRutina.imagen}}/>
+  <Thumbnail square source={{uri:listaRecetas.imagen}}/>
 
-                                      <Text style={styles.titulo}>{listaRutina.nombre}</Text>
+                                      <Text style={styles.titulo}>{listaRecetas.nombre}</Text>
                                       
                                   </View>
                                   <Entypo name="dots-three-vertical" size={24} color="black" onPress={() => Alert.alert('Eliminar rutina')} />

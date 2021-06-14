@@ -3,14 +3,14 @@ import {Dimensions, StyleSheet, Modal, Share, View, Text, Switch, SafeAreaView, 
 import {Container, Content, Body, Left, Icon, Right, Title, Button} from 'native-base';
 import { AntDesign } from '@expo/vector-icons';
 
-export default class FullView extends Component{
-
-    render(){
+export default function FullView ({navigation:navigate}){
+    const receta=(navigate.state.params.data);
+    //console.log(receta)
         return(
             <View style={styles.container}>
                 <ScrollView>
                 <StatusBar barStyle="light-content" />
-                <ImageBackground source = {require('../assets/mugcake.jpeg')} style={styles.recetaFondo}>
+                <ImageBackground source = {{uri:receta.imagen}} style={styles.recetaFondo}>
                     <SafeAreaView>
                         <View style={styles.menubar}>
                             <View style={styles.back}>
@@ -19,7 +19,7 @@ export default class FullView extends Component{
                             </View>
                         </View>
                         <View style={styles.mainReceta}>
-                            <Text style={styles.titulos}> Título del Platillo </Text>
+                            <Text style={styles.titulos}> </Text>
                             <View style={styles.divider}/>
                             <Text style={styles.sub}> Calorias por receta </Text>
                             <Text style={styles.sub}> Grasa, Proteina, Carbs</Text>
@@ -28,31 +28,16 @@ export default class FullView extends Component{
                 </ImageBackground>
                 <View style={styles.contenedorReceta}>
                     <Text style={styles.bold}> Ingredientes </Text>
-                    <Text> 4 cda. harina de repostería </Text>
-                    <Text> 4 cda. azúcar blanco </Text>
-                    <Text> 2 cda. cacao en polvo </Text>
-                    <Text> 1 huevo mediano </Text>
-                    <Text> 3 cda. leche entera </Text>
-                    <Text> 1/3 cdta levadura  </Text>
+                    <Text> {receta.ingredientes} </Text>
                     <View style={styles.instrucciones}>
                         <Text style={styles.bold}> Instrucciones </Text>
-                        <Text style={styles.paso}> 1. En un pequeño recipiente echamos las cucharadas rasas de harina, 
-                            ayudándonos para ello de un cuchillo, y dejamos que el contenido de harina sea simplemente el 
-                            que entra en la cavidad de la cuchara. Añadimos las cucharadas de azúcar, el cacao en polvo y 
-                            la levadura.</Text>
-                        <Text style={styles.paso}> 2. Revolvemos todo con la ayuda de un tenedor, hasta que los ingredientes están 
-                            completamente mezclados.</Text>
-                        <Text style={styles.paso}> 3. Batimos el huevo hasta que presenta burbujas, así el resultado es más esponjoso. 
-                            Mezclamos con los ingredientes en polvo que tenemos en el bol.</Text>
-                        <Text style={styles.paso}> 4. A continuación añadimos la leche y el aceite. 
-                            Unimos todo con el tenedor de forma concienzuda hasta conseguir una mezcla completamente homogénea.</Text>
-                    </View>
+                        <Text>{receta.preparacion}</Text>
+                </View>
                 </View>
                 </ScrollView>
             </View>
         );
     }
-}
 
 const styles = StyleSheet.create({
     container: {
