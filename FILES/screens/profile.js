@@ -34,10 +34,13 @@ export default function Profile({ navigation: { navigate } } ) {
 
     const [user, setUser] = useState({});
 
-    
-    getData().then(data => {
-        setUser(data);
-    });
+    const [isMade,setMade]=useState(false);
+    if(isMade == false){
+        getData().then(data => {
+            setUser(data);
+            setMade(true);
+        });
+    }
 
     
       signOut = () => {
